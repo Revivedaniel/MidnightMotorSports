@@ -6,7 +6,7 @@ const db = require("./config/connection");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-server.applyMiddleware({ app });
+// server.applyMiddleware({ app });
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
