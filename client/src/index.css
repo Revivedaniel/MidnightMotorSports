@@ -1,0 +1,55 @@
+body {
+    background: linear-gradient( rgb(0, 0, 0) 70%, rgb(36, 9, 134) 100%, rgb(42, 17, 99) 100%);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+ header {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     align-items:center;
+     justify-content: space-between;
+     background: black;
+     width: 100%;
+     color: white;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+ }
+ .headerPhrase {
+     
+     display: flex;
+     justify-content: space-around;
+     align-items: flex-end;
+     font-size: 50px;
+     font-style: italic;
+     border: 2px solid white;
+     padding: 20px;
+     box-shadow:0px 0px 5px 5px white inset,0px 0px 5px 5px white;
+     border-radius: 30px;
+ }
+
+
+.midnightLogo {
+    width: 200px;
+    height: 200px
+}
+.instagramLogo {
+    width: 80px;
+    height: 80px;
+}
+.facebookLogo {
+    width: 75px;
+    height: 75px;
+}
+
+
+.unorderedList {
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    list-style-type: none;
+}
