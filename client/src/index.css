@@ -52,4 +52,15 @@ body {
     font-family: sans-serif;
     font-size: 30px;
     list-style-type: none;
+    font-style: italic;
+}
+.carouselbox {
+    display: flex;
+    justify-content: center;
+    margin:10%
+}
+
+.carousel {
+    width: 800px;
+    height: 700px;
 }
