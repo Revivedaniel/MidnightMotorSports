@@ -5,3 +5,16 @@
 // footer - Business Info (address, phone number), GoogleMaps?, Copyright, socials
 
 // data needed from backend: none
+import React from 'react';
+import Nav from '../components/Nav'
+import Header from '../components/Header'
+function HomePage(){
+    return <div>
+        <Header />
+        <Nav />
+    
+    </div>
+}
+
+
+export default HomePage;

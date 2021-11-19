@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
+
 // pages
 import HomePage from './pages/HomePage';
 import Checkout from './pages/Checkout';
