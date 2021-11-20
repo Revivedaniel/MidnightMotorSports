@@ -8,6 +8,20 @@ const typeDefs = gql`
     email: String
   }
 
+  type Part {
+    _id: ID
+    name: String
+    description: String
+    image: String
+    price: Int
+  }
+
+  type Category {
+    _id: ID
+    name: String
+    parts: [Part]
+  }
+
   type Auth {
     token: ID
     user: User
@@ -15,6 +29,8 @@ const typeDefs = gql`
 
   type Query {
     user: User
+    parts: [Part]
+    categories: [Category]
   }
 
   type Mutation {
