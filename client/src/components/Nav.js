@@ -4,8 +4,8 @@ import React from "react";
 export default  function navBar() {
       return<nav>
 <ul className='unorderedList'>
-    <li>Home</li>
-    <li>Products</li>
+    <a href='/'><li>Home</li></a>
+    <a href='/Products'><li>Products</li></a>
     <li>Contact Us</li>
 </ul>
 </nav>
