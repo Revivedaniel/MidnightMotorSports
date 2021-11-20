@@ -34,6 +34,12 @@ const typeDefs = gql`
     years: [Year]
   }
 
+  type Make {
+    _id: ID
+    name: String
+    models: [Model]
+  }
+
   type Auth {
     token: ID
     user: User
@@ -45,6 +51,7 @@ const typeDefs = gql`
     categories: [Category]
     years: [Year]
     models: [Model]
+    makes: [Make]
   }
 
   type Mutation {
