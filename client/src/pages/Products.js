@@ -15,9 +15,9 @@ export default function Products() {
     return (
         <div>
             <div className='brandimg'>
-                <img src={Mitusbishi} className='mitlogo' />
-                <img src={Subaru} className='subarulogo' />
-                <img src={Bmw} className='bmwlogo' />
+                <a href='/Mitsubishi'><img src={Mitusbishi} className='mitlogo' /></a>
+                <a href='/Subaru'><img src={Subaru} className='subarulogo' /></a>
+                <a href='/Bmw'><img src={Bmw} className='bmwlogo' /></a>
             </div>
         </div>
     )
