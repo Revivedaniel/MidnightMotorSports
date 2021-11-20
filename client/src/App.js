@@ -13,6 +13,9 @@ import BMWProducts from './pages/Brands/BMW'
 import MitsubishiProducts from './pages/Brands/Mitsubishi'
 import SubaruProducts from './pages/Brands/Subaru'
 
+import Nav from './components/Nav';
+import Header from './components/Header';
+
 const client = new ApolloClient({
     uri: '/graphql',
     cache: new InMemoryCache(),
@@ -23,15 +26,17 @@ function App() {
         <ApolloProvider client={client}>
             <Router>
                 <div>
+                    <Header />
+                    <Nav />
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path="/Checkout" component={Checkout} />
+                        {/* <Route exact path="/Checkout" component={Checkout} />
                         <Route exact path="/Products" component={Products} />
                         <Route exact path="/Contact" component={Contact} />
                         <Route exact path="/BMW" component={BMWProducts} />
                         <Route exact path="/Mitsubishi" component={MitsubishiProducts} />
-                        <Route exact path="/Subaru" component={SubaruProducts} />
+                        <Route exact path="/Subaru" component={SubaruProducts} /> */}
                     </Switch>
                 </div>
             </Router>

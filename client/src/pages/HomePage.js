@@ -9,11 +9,9 @@ import React from 'react';
 import Nav from '../components/Nav'
 import Header from '../components/Header'
 import Jumbotron from '../components/Jumbotron'
-function HomePage(){
+function HomePage() {
     return <div>
-        <Header />
-        <Nav />
-    <Jumbotron />
+        <Jumbotron />
     </div>
 }
 
