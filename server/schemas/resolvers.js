@@ -24,6 +24,11 @@ const resolvers = {
       const categories = await Category.find({}).populate("parts");
 
       return categories;
+    },
+    years: async () => {
+      const years = await Year.find({}).populate("categories");
+
+      return years;
     }
   },
   Mutation: {
