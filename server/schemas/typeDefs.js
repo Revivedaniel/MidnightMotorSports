@@ -28,6 +28,12 @@ const typeDefs = gql`
     categories: [Category]
   }
 
+  type Model {
+    _id: ID
+    name: String
+    years: [Year]
+  }
+
   type Auth {
     token: ID
     user: User
@@ -38,6 +44,7 @@ const typeDefs = gql`
     parts: [Part]
     categories: [Category]
     years: [Year]
+    models: [Model]
   }
 
   type Mutation {
