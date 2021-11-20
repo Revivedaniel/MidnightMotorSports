@@ -10,17 +10,15 @@ import React from 'react'
 import Mitusbishi from '../images/transparentmitlogo.png'
 import Subaru from '../images/transparentsublogo.png'
 import Bmw from '../images/transparentbmwlogo.png'
+
 export default function Products() {
     return (
         <div>
-            
-<div className='brandimg'>
-<img src={Mitusbishi} className='mitlogo' />
-<img src={Subaru} className='subarulogo' />
-<img src={Bmw} className='bmwlogo' />
-
-
-</div>
-</div>
+            <div className='brandimg'>
+                <img src={Mitusbishi} className='mitlogo' />
+                <img src={Subaru} className='subarulogo' />
+                <img src={Bmw} className='bmwlogo' />
+            </div>
+        </div>
     )
 }
