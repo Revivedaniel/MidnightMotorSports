@@ -133,7 +133,7 @@ db.once("open", async () => {
 
   for (let index = 0; index < modelCount; index++) {
     let outline = {
-      name: `Year ${index}`,
+      name: `Model ${index}`,
       years: [
         years[modelInnerIndex + 1],
         years[modelInnerIndex + 2],
@@ -160,7 +160,7 @@ db.once("open", async () => {
 
   for (let index = 0; index < makeCount; index++) {
     let outline = {
-      name: `Year ${index}`,
+      name: `Make ${index}`,
       models: [
         models[makeInnerIndex + 1],
         models[makeInnerIndex + 2],
@@ -173,7 +173,7 @@ db.once("open", async () => {
 
   await Make.insertMany(makeSeeds);
 
-  console.log("Years seeded");
+  console.log("Make seeded");
 
   process.exit();
 });
