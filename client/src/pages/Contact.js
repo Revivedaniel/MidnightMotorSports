@@ -8,7 +8,7 @@ import React from 'react'
 export default function Contact() {
     return (
         <div>
-            <form class="formEntrie">
+            <form className="formEntrie">
                 <label for="first_name">First Name</label>
                 <input type="text" id="fname" name="firstname" placeholder="Enter Your First Name"></input>
 
@@ -23,9 +23,9 @@ export default function Contact() {
                 </select>
 
                 <label for="subject">Question or Comments</label>
-                <textarea id="subject" name="subject" placeholder="Enter Your Question or Comment" style="height:200px"></textarea>
+                <textarea id="subject" name="subject" placeholder="Enter Your Question or Comment" ></textarea>
 
-                <input type="submit" value="Submit">Submit</input>
+                <button type="submit" value="Submit">Submit</button>
 
             </form>
 

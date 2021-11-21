@@ -13,8 +13,7 @@ import Footer from '../components/Footer';
 
 function HomePage(){
     return <div>
-        <Header />
-        <Nav />
+       
         <Jumbotron />
         <Footer/>
     </div>
