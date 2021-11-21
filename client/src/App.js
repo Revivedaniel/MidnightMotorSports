@@ -33,14 +33,16 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path="/Checkout" component={Checkout} />
-                        <Route exact path="/Products" component={Products} />
-                        <Route exact path="/Contact" component={Contact} />
-                        <Route exact path="/BMW" component={BMWProducts} />
-                        <Route exact path="/Mitsubishi" component={MitsubishiProducts} />
-                        <Route exact path="/Mitsubishi/evo789" component={Evo789} />
-                        <Route exact path="/Mitsubishi/evox" component={EvoX} />
-                        <Route exact path="/Subaru" component={SubaruProducts} />
+                        <Route exact path="/checkout" component={Checkout} />
+                        <Route exact path="/products" component={Products} />
+                        <Route exact path="/contact" component={Contact} />
+                        <Route exact path="/bmw" component={BMWProducts} />
+
+                        <Route exact path="/mitsubishi" component={MitsubishiProducts} />
+                        <Route exact path="/mitsubishi/evo789" component={Evo789} />
+                        <Route exact path="/mitsubishi/evox" component={EvoX} />
+
+                        <Route exact path="/subaru" component={SubaruProducts} />
                     </Switch>
                 </div>
             </Router>
