@@ -8,7 +8,7 @@ import Instagram from '../images/instagram.png'
 import Facebook from '../images/facebook.png'
 
 export default function Header() {
-    if (Auth.loggedIn()) {
+    if (!Auth.loggedIn()) {
         return (
             <header>
                 <a href="/"><img src={Midnight} alt='midnight logo' className='midnightLogo' /></a>
