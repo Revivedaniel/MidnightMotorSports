@@ -9,6 +9,7 @@ import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
+import NoRoute from './pages/NoRoute';
 
 // brands
 import BMWProducts from './pages/Brands/BMW'
@@ -56,6 +57,8 @@ function App() {
                         <Route exact path="/subaru" component={SubaruProducts} />
                         <Route exact path="/subaru/brz" component={Brz} />
                         <Route exact path="/subaru/sti" component={Sti} />
+
+                        <Route component={NoRoute} />
                     </Switch>
                 </div>
             </Router>
