@@ -16,7 +16,7 @@ export default function Header() {
                 <img src={Instagram} alt='instagram logo' className='instagramLogo' />
                 <img src={Facebook} alt='facebook logo' className='facebookLogo' />
                 <h2>
-                    <Link to="/login">
+                    <Link to="/login" style={{ textDecoration: 'none' }}>
                         Login
                     </Link>
                 </h2>
@@ -30,7 +30,7 @@ export default function Header() {
                 <img src={Instagram} alt='instagram logo' className='instagramLogo' />
                 <img src={Facebook} alt='facebook logo' className='facebookLogo' />
                 <h2>
-                    <a href="/" onClick={() => Auth.logout()}>
+                    <a href="/" onClick={() => Auth.logout()} style={{ textDecoration: 'none' }}>
                         Logout
                     </a>
                 </h2>
