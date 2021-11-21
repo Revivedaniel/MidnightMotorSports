@@ -11,6 +11,8 @@ import Products from './pages/Products';
 import Contact from './pages/Contact';
 import BMWProducts from './pages/Brands/BMW'
 import MitsubishiProducts from './pages/Brands/Mitsubishi'
+import Evo789 from './pages/BrandProducts/Evo789Products'
+import EvoX from './pages/BrandProducts/EvoXProducts'
 import SubaruProducts from './pages/Brands/Subaru'
 
 import Nav from './components/Nav';
@@ -31,11 +33,13 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/login" component={Login} />
-                        {/* <Route exact path="/Checkout" component={Checkout} /> */}
+                        <Route exact path="/Checkout" component={Checkout} />
                         <Route exact path="/Products" component={Products} />
                         <Route exact path="/Contact" component={Contact} />
                         <Route exact path="/BMW" component={BMWProducts} />
                         <Route exact path="/Mitsubishi" component={MitsubishiProducts} />
+                        <Route exact path="/Mitsubishi/evo789" component={Evo789} />
+                        <Route exact path="/Mitsubishi/evox" component={EvoX} />
                         <Route exact path="/Subaru" component={SubaruProducts} />
                     </Switch>
                 </div>
