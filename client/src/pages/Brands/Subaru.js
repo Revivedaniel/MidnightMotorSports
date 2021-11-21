@@ -4,9 +4,15 @@ import Brz from '../../images/transparentbrz.png'
 export default function Subaru() {
     return (
         <div>
-            <div className='subaruimgs'>
-            <img src={Brz} alt='sti car image' className='stiimg' />        
-            <img src={Sti} alt='brz car image' className='brzimg' />        
+            <div className='subieimgs'>
+                <div>
+            <img src={Brz} alt='brz image' className='brzimg' />
+            <h1 className='carmodelname'>BRZ</h1>
+                </div> 
+                <div>   
+            <img src={Sti} alt='evox image' className='stiimg' /> 
+            <h1 className='carmodelname'>STI</h1>
+                   </div>
             </div>
             </div>
     )

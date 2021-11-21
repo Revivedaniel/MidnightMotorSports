@@ -138,6 +138,7 @@ ul {
 }
 
 .mitsuimgs {
+    margin-top: -50px;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
@@ -148,7 +149,7 @@ align-content: center;
 
 
 .evo9img {
-    margin: 10px;
+    
     width: 750px;
     height: 430px;
 }
@@ -158,11 +159,72 @@ align-content: center;
     filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
 .evoximg {
-    margin: 10px;
+    
     width: 720px;
     height: 430px;
 }
 .evoximg:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+.subieimgs {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+align-content: center;
+}
+
+
+.brzimg {
+    margin-top: 110px;
+    width: 550px;
+    height: 280px;
+}
+.brzimg:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+.stiimg {
+    margin: 10px;
+    width: 610px;
+    height: 360px;
+}
+.stiimg:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+.bmwimgs {
+    margin-top: 70px;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+align-content: center;
+}
+
+
+.m2img {
+    margin-top: 20px;
+    width: 580px;
+    height: 310px;
+}
+.m2img:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+.m4img {
+    margin: 10px;
+    width: 550px;
+    height: 300px;
+}
+.m4img:hover {
     transition: 300ms;
     -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
     filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
