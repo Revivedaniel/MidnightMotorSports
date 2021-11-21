@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const secret = process.env.TOKEN_SECRET
+const secret = "parth's_ratio_is_100%"
 const expiration = '2h';
 
 module.exports = {

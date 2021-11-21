@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require("../models");
+const { User, Part, Category, Make, Model, Year } = require("../models");
 const { signToken } = require("../utils/auth");
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
@@ -14,6 +14,32 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
+    // All parts query
+    parts: async () => {
+      const parts = await Part.find({})
+
+      return parts;
+    },
+    categories: async () => {
+      const categories = await Category.find({}).populate("parts");
+
+      return categories;
+    },
+    years: async () => {
+      const years = await Year.find({}).populate("categories");
+
+      return years;
+    },
+    models: async () => {
+      const models = await Model.find({}).populate("years")
+
+      return models;
+    },
+    makes: async () => {
+      const makes = await Makes.find({}).populate("models")
+
+      return makes;
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {

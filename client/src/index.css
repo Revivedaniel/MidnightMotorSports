@@ -4,7 +4,10 @@ body {
    background-repeat: no-repeat;
    background-attachment: fixed;
 }
- header {
+
+/* HEADER STYLE */
+ 
+header {
      display: flex;
      flex-direction: row;
      flex-wrap: wrap;
@@ -38,11 +41,26 @@ body {
     width: 80px;
     height: 80px;
 }
+.instagramLogo:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    width: 90px;
+    height: 90px;
+}
 .facebookLogo {
     width: 75px;
     height: 75px;
 }
+.facebookLogo:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    width: 85px;
+    height: 85px;
+}
 
+/* NAV STYLE */
 
 .unorderedList {
     display: flex;
@@ -53,7 +71,12 @@ body {
     font-size: 30px;
     list-style-type: none;
     font-style: italic;
+
 }
+ul {
+  text-decoration: none;  
+}
+
 .carouselbox {
     display: flex;
     justify-content: center;
@@ -63,4 +86,84 @@ body {
 .carousel {
     width: 800px;
     height: 700px;
+}
+
+/* PRODUCTS STYLE */
+
+.brandimg {
+    margin-top: 7%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.mitlogo {
+    width: 250px;
+    height: 300px;
+}
+
+.mitlogo:hover{
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+.subarulogo {
+    width: 500px;
+    height: 300px;
+}
+.subarulogo:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+.bmwlogo {
+    width: 250px;
+    height: 250px;
+}
+.bmwlogo:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+
+/* MITSUBISHI PRRODUCTS STYLE */
+.carmodelname {
+    color: white;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    font-size: 80px;
+}
+
+.mitsuimgs {
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+align-content: center;
+}
+
+
+.evo9img {
+    margin: 10px;
+    width: 750px;
+    height: 430px;
+}
+.evo9img:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+.evoximg {
+    margin: 10px;
+    width: 720px;
+    height: 430px;
+}
+.evoximg:hover {
+    transition: 300ms;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
