@@ -6,17 +6,17 @@ export default function navBar() {
     return <nav>
         <ul className='unorderedList'>
             <li>
-                <Link to="/">
+                <Link to="/" style={{ textDecoration: 'none' }}>
                     Home
                 </Link>
             </li>
             <li>
-                <Link to="/Products">
+                <Link to="/Products" style={{ textDecoration: 'none' }}>
                     Products
                 </Link>
             </li>
             <li>
-                <Link to="/Contact">
+                <Link to="/Contact" style={{ textDecoration: 'none' }}>
                     Contact Us
                 </Link>
             </li>

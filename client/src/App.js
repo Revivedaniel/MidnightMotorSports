@@ -9,10 +9,22 @@ import Checkout from './pages/Checkout';
 import Login from './pages/Login';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
-import BMWProducts from './pages/Brands/BMW'
-import MitsubishiProducts from './pages/Brands/Mitsubishi'
-import SubaruProducts from './pages/Brands/Subaru'
+import NoRoute from './pages/NoRoute';
 
+// brands
+import BMWProducts from './pages/Brands/BMW'
+import M2 from './pages/BrandProducts/M2Products'
+import M4 from './pages/BrandProducts/M4Products'
+
+import MitsubishiProducts from './pages/Brands/Mitsubishi'
+import Evo789 from './pages/BrandProducts/Evo789Products'
+import EvoX from './pages/BrandProducts/EvoXProducts'
+
+import SubaruProducts from './pages/Brands/Subaru'
+import Sti from './pages/BrandProducts/StiProducts'
+import Brz from './pages/BrandProducts/BrzProducts'
+
+// global components
 import Nav from './components/Nav';
 import Header from './components/Header';
 
@@ -31,12 +43,22 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/login" component={Login} />
-                        {/* <Route exact path="/Checkout" component={Checkout} /> */}
-                        <Route exact path="/Products" component={Products} />
-                        <Route exact path="/Contact" component={Contact} />
-                        {/* <Route exact path="/BMW" component={BMWProducts} /> */}
-                        <Route exact path="/Mitsubishi" component={MitsubishiProducts} />
-                        <Route exact path="/Subaru" component={SubaruProducts} />
+                        <Route exact path="/checkout" component={Checkout} />
+                        <Route exact path="/products" component={Products} />
+                        <Route exact path="/contact" component={Contact} />
+                        <Route exact path="/bmw" component={BMWProducts} />
+                        <Route exact path="/bmw/m2" component={M2} />
+                        <Route exact path="/bmw/m4" component={M4} />
+
+                        <Route exact path="/mitsubishi" component={MitsubishiProducts} />
+                        <Route exact path="/mitsubishi/evo789" component={Evo789} />
+                        <Route exact path="/mitsubishi/evox" component={EvoX} />
+
+                        <Route exact path="/subaru" component={SubaruProducts} />
+                        <Route exact path="/subaru/brz" component={Brz} />
+                        <Route exact path="/subaru/sti" component={Sti} />
+
+                        <Route component={NoRoute} />
                     </Switch>
                 </div>
             </Router>
