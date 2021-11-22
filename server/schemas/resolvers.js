@@ -36,7 +36,7 @@ const resolvers = {
       return models;
     },
     makes: async () => {
-      const makes = await Makes.find({}).populate("models")
+      const makes = await Make.find({}).populate("models")
 
       return makes;
     }
