@@ -7,15 +7,13 @@
 // data needed from backend: none
 import React from 'react';
 import Jumbotron from '../components/Jumbotron'
-import Footer from '../components/Footer';
 
 function HomePage(){
-    return <div>
-       
+    return (
+    <div>
         <Jumbotron />
-        <Footer/>
     </div>
-}
+)}
 
 
 export default HomePage;
