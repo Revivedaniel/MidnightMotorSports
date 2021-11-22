@@ -27,6 +27,7 @@ import Brz from './pages/BrandProducts/BrzProducts'
 // global components
 import Nav from './components/Nav';
 import Header from './components/Header';
+import Footer from './components/Footer'
 
 const client = new ApolloClient({
     uri: '/graphql',
@@ -60,6 +61,7 @@ function App() {
 
                         <Route component={NoRoute} />
                     </Switch>
+                    <Footer />
                 </div>
             </Router>
         </ApolloProvider>
