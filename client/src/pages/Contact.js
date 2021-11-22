@@ -9,6 +9,7 @@ export default function Contact() {
     return (
         <div>
             <form className="formEntrie">
+                <div className='formcontainer'>
                 <label for="first_name">First Name</label>
                 <input type="text" id="fname" name="firstname" placeholder="Enter Your First Name"></input>
 
@@ -25,8 +26,8 @@ export default function Contact() {
                 <label for="subject">Question or Comments</label>
                 <textarea id="subject" name="subject" placeholder="Enter Your Question or Comment" ></textarea>
 
-                <button type="submit" value="Submit">Submit</button>
-
+                <button className='submitBtn' type="submit" value="Submit">Submit</button>
+</div>
             </form>
 
 
