@@ -60,6 +60,18 @@ header {
     height: 85px;
 }
 
+.accountroute {
+    font-style: italic;
+    text-align: center;
+    
+    padding: 10px;
+}
+.accountroute:hover {
+    box-shadow: 0px 0px 2px 2px white inset, 0px 0px 2px 2px white;
+    border-radius: 10px;
+    text-shadow:  0px 0px 3px white;
+    transition: 400ms;
+}
 /* NAV STYLE */
 
 .unorderedList {
@@ -67,7 +79,7 @@ header {
     justify-content:space-around;
     align-items: center;
     color: white;
-    font-family: sans-serif;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 30px;
     list-style-type: none;
     font-style: italic;
@@ -76,6 +88,18 @@ header {
 
 ul {
   text-decoration: none;  
+}
+li {
+    text-align: center;
+    width: 200px;
+    margin: 2px;
+}
+
+li:hover{
+    box-shadow: 0px 0px 2px 2px white inset, 0px 0px 2px 2px white;
+    border-radius: 10px;
+    text-shadow:  0px 0px 3px white;
+    transition: 400ms;
 }
 
 .carouselbox {
@@ -132,6 +156,7 @@ ul {
 /* MITSUBISHI PRRODUCTS STYLE */
 .carmodelname {
     color: white;
+    text-shadow: 0px 0px 10px black;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-style: italic;
@@ -139,7 +164,7 @@ ul {
 }
 
 .mitsuimgs {
-    margin-top: -50px;
+    margin-top: -20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -169,40 +194,6 @@ ul {
     -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
     filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
-
-/* FOOTER CSS BELOW*/
-
-footer {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items:center;
-    justify-content: space-evenly;
-    width: 100%;
-    color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.googleMaps {
-    width: 100%;
-    height: 187px;
-}
-
-.phoneN {
-    text-decoration: none;
-    font-size: x-large ;
-}
-
-/*CONTACT US CSS BELOW */
- form {
-     display: flex;
-     flex-direction: column;
-     flex-wrap: wrap;
-     align-content: center;
-     justify-content: center;
-     color: white;
- }
 
 .subieimgs {
     display: flex;
@@ -265,3 +256,258 @@ footer {
     -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
     filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
+
+/* FOOTER CSS BELOW*/
+
+footer {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content: space-evenly;
+    width: 100%;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.googleMaps {
+    width: 100%;
+    height: 187px;
+}
+
+.phoneN {
+    text-decoration: none;
+    font-size: x-large ;
+}
+
+/*CONTACT US & LOGIN CSS BELOW */
+ form {
+     display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+ }
+ input {
+     background: none;
+     border-radius: 20px;
+     color: white;
+     padding: 10px;
+     font-weight: bold;
+     border: 2px solid white;
+    
+ }
+
+ input:hover {
+     box-shadow: 0px 0px 4px 4px white;
+ }
+ input:focus {
+     box-shadow: 0px 0px 7px 7px white,0px 0px 7px 7px white;
+ }
+
+ select {
+     background: none;
+     color: white;
+     padding: 10px;
+     border: 2px solid white;
+     border-radius: 20px;
+ }
+ option {
+    background: rgb(15, 3, 71);
+     color: white;
+     padding: 10px;
+     border: 2px solid white;
+     border-radius: 20px;
+ }
+
+ textarea {
+    background: none;
+     color: white;
+     padding: 10px;
+     border: 2px solid white;
+     border-radius: 20px;
+ }
+
+ .formcontainer {
+     margin-top: 80px;
+     margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-content:space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    width: 500px;
+ }
+
+ 
+
+ .submitBtn {
+     color: white;
+     margin-top: 20px;
+     padding: 10px;
+     border-radius: 20px;
+     background: linear-gradient(rgb(49, 1, 49),rgb(3, 3, 66));
+ }
+
+ .submitBtn:hover{
+     transition: 400ms;
+     box-shadow: 0px 0px 3px 3px white;
+ }
+ .submitBtn:focus{
+     box-shadow: 0px 0px 7px 7px white;
+ }
+ .enrollcontainer {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-around;
+
+ }
+
+ .logincontainer {
+     color: white;
+display: flex;
+flex-direction: column;
+width: 500px;
+ }
+ .signupcontainer {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+ }
+
+ /* PRODUCTS STYLE */
+
+ .productscontainer{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+
+ }
+
+ .buttoncontainer {
+     margin-top: 50px;
+     display: flex;
+     flex-direction: column;
+     align-content: center;
+    justify-content: center;
+    align-items: center;
+     width: 200px;
+    border:2px solid white;
+    border-radius: 10px;
+ }
+
+#dropdown-basic-button {
+    width: 190px;
+    margin: 2px;
+}
+#dropdown-basic-button:hover {
+   box-shadow: 0px 0px 7px 7px rgb(9, 218, 255);
+   
+}
+#dropdown-basic-button:focus {
+   
+   background: rgb(28, 70, 206);
+}
+
+
+ .topboxevo7 {
+    background-image: url(./images//evo9wallpaper.jpg);
+    background-position: center;
+    background-size: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    border:2px solid white;
+    border-radius: 10px;
+}
+ .topboxevox {
+    background-image: url(./images//evoxwallpaper.jpg);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    border:2px solid white;
+    border-radius: 10px;
+}
+ .topboxbrz {
+    background-image: url(./images//brzwallpaper.jpg);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    border:2px solid white;
+    border-radius: 10px;
+}
+ .topboxsti {
+    background-image: url(./images//stiwallpaper.jpg);
+    background-position:center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    border:2px solid white;
+    border-radius: 10px;
+}
+ .topboxm2{
+    background-image: url(./images//m2wallpaper.jpg);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    border:2px solid white;
+    border-radius: 10px;
+}
+ .topboxm4 {
+    background-image: url(./images//m4wallpaper.jpg);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    border:2px solid white;
+    border-radius: 10px;
+}
+
+ 
