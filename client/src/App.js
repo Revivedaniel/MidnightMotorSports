@@ -38,31 +38,30 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <Router>
-                <div>
-                    <Header />
-                    <Nav />
-                    <Switch>
-                        <Route exact path="/" component={HomePage} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/checkout" component={Checkout} />
-                        <Route exact path="/products" component={Products} />
-                        <Route exact path="/contact" component={Contact} />
-                        <Route exact path="/bmw" component={BMWProducts} />
-                        <Route exact path="/bmw/m2" component={M2} />
-                        <Route exact path="/bmw/m4" component={M4} />
+                <Header />
+                <Nav />
+                <Switch>
+                    <Route exact path="/" component={HomePage} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/checkout" component={Checkout} />
+                    <Route exact path="/products" component={Products} />
+                    <Route exact path="/contact" component={Contact} />
+                    <Route exact path="/bmw" component={BMWProducts} />
+                    <Route exact path="/bmw/m2" component={M2} />
+                    <Route exact path="/bmw/m4" component={M4} />
 
-                        <Route exact path="/mitsubishi" component={MitsubishiProducts} />
-                        <Route exact path="/mitsubishi/evo789" component={Evo789} />
-                        <Route exact path="/mitsubishi/evox" component={EvoX} />
+                    <Route exact path="/mitsubishi" component={MitsubishiProducts} />
+                    <Route exact path="/mitsubishi/evo789" component={Evo789} />
+                    <Route exact path="/mitsubishi/evox" component={EvoX} />
 
-                        <Route exact path="/subaru" component={SubaruProducts} />
-                        <Route exact path="/subaru/brz" component={Brz} />
-                        <Route exact path="/subaru/sti" component={Sti} />
+                    <Route exact path="/subaru" component={SubaruProducts} />
+                    <Route exact path="/subaru/brz" component={Brz} />
+                    <Route exact path="/subaru/sti" component={Sti} />
 
-                        <Route component={NoRoute} />
-                    </Switch>
-                    <Footer />
-                </div>
+                    <Route component={NoRoute} />
+                </Switch>
+                <div className="footer-ghost"></div>
+                <Footer />
             </Router>
         </ApolloProvider>
     );
