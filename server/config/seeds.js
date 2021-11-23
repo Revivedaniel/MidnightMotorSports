@@ -44,6 +44,25 @@ db.once("open", async () => {
   });
 
   console.log("Users seeded");
+  
+  // Category seeds
+  await Category.deleteMany();
+
+  // Dynamically creating categoryCount amount of parts
+  let categoryCount = 81;
+  
+  let categorySeeds = [];
+  
+  for (let index = 0; index < categoryCount; index++) {
+    let outline = {
+      name: `category ${index}`,
+    };
+    categorySeeds.push(outline);
+  }
+  
+  const categories = await Category.insertMany(categorySeeds);
+
+  console.log("Categories seeded");
 
   // Part seeds
   await Part.deleteMany();
@@ -59,6 +78,8 @@ db.once("open", async () => {
       description: `Part ${index} description`,
       image: `http://localhost:3001/images/${index}`,
       price: Number(index + 1),
+      year: index,
+      category: categories[0]
     };
     partSeeds.push(outline);
   }
@@ -67,59 +88,6 @@ db.once("open", async () => {
 
   console.log("Parts seeded");
 
-  // Category seeds
-  await Category.deleteMany();
-
-  // Dynamically creating categoryCount amount of parts
-  let categoryCount = 81;
-
-  let categorySeeds = [];
-
-  let categoryInnerIndex = -1;
-
-  for (let index = 0; index < categoryCount; index++) {
-    let outline = {
-      name: `category ${index}`,
-      parts: [
-        parts[categoryInnerIndex + 1],
-        parts[categoryInnerIndex + 2],
-        parts[categoryInnerIndex + 3],
-      ],
-    };
-    categorySeeds.push(outline);
-    categoryInnerIndex += 3;
-  }
-
-  const categories = await Category.insertMany(categorySeeds);
-
-  console.log("Categories seeded");
-
-  // Year seeds
-  await Year.deleteMany();
-
-  // Dynamically creating yearCount amount of parts
-  let yearCount = 27;
-
-  let yearSeeds = [];
-
-  let yearInnerIndex = -1;
-
-  for (let index = 0; index < yearCount; index++) {
-    let outline = {
-      name: `Year ${index}`,
-      categories: [
-        categories[yearInnerIndex + 1],
-        categories[yearInnerIndex + 2],
-        categories[yearInnerIndex + 3],
-      ],
-    };
-    yearSeeds.push(outline);
-    yearInnerIndex += 3;
-  }
-
-  const years = await Year.insertMany(yearSeeds);
-
-  console.log("Years seeded");
 
   // Model seeds
   await Model.deleteMany();
@@ -134,14 +102,13 @@ db.once("open", async () => {
   for (let index = 0; index < modelCount; index++) {
     let outline = {
       name: `Model ${index}`,
-      years: [
-        years[modelInnerIndex + 1],
-        years[modelInnerIndex + 2],
-        years[modelInnerIndex + 3],
+      parts: [
+        parts[modelInnerIndex + 1],
+        parts[modelInnerIndex + 2],
+        parts[modelInnerIndex + 3],
       ],
     };
     modelSeeds.push(outline);
-    yearInnerIndex += 3;
   }
 
   const models = await Model.insertMany(modelSeeds);

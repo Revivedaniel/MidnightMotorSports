@@ -7,9 +7,9 @@ const modelSchema = new Schema({
         type: String,
         required: true,
     },
-    years: [{
+    parts: [{
         type: Schema.Types.ObjectId,
-        ref: "Year"
+        ref: "Part"
     }],
 
 });

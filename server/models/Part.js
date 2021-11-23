@@ -15,12 +15,18 @@ const partSchema = new Schema({
         type: String,
         required: true,
     },
-
     price: {
         type: Number,
         required: true,
         min: 0.99,
     },
+    year: {
+        type: Number,
+    },
+    category: {
+        type: Schema.Types.ObjectId,
+        ref: "Category",
+    }
 });
 
 const Part = mongoose.model("Part", partSchema);
