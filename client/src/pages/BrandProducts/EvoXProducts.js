@@ -7,7 +7,6 @@ export default function EvoXProducts() {
         <div className='productscontainer'>
             <div className='topboxevox'>
                 <h1 className='carmodelname'>EVOX</h1>
-                
             </div>
             <div className='buttoncontainer'>
             <DropdownButton as={ButtonGroup} key='end' id="dropdown-basic-button" drop='end' title="Forced Induction">
@@ -30,9 +29,8 @@ export default function EvoXProducts() {
                     <Dropdown.Item href="#/action-2">Brake Rotors</Dropdown.Item>
                     <Dropdown.Item href="#/action-3">Brake Pads</Dropdown.Item>
                 </DropdownButton>
-
             </div>
-
+            <div> test </div>
         </div>
     )
 }
