@@ -440,7 +440,7 @@ width: 500px;
  .topboxevox {
     background-image: url(./images//evoxwallpaper.jpg);
     background-position:center;
-    background-size: cover;
+    background-size: 120%;
     background-repeat: no-repeat;
     margin-top: 10px;
     display: flex;
@@ -503,8 +503,8 @@ width: 500px;
 }
  .topboxm4 {
     background-image: url(./images//m4wallpaper.jpg);
-    background-position:center;
-    background-size: cover;
+    background-position:right;
+    background-size: 100%;
     background-repeat: no-repeat;
     margin-top: 10px;
     display: flex;
