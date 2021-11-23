@@ -6,12 +6,14 @@
 
 // data needed from backend: none
 import React from 'react';
-import Jumbotron from '../components/Jumbotron'
+import Jumbotron from '../components/Jumbotron';
+
 
 function HomePage(){
     return (
-    <div>
+    <div className='homepage'>
         <Jumbotron />
+      
     </div>
 )}
 
