@@ -8,30 +8,25 @@ const typeDefs = gql`
     email: String
   }
 
+  type Category {
+    _id: ID
+    name: String
+  }
+
   type Part {
     _id: ID
     name: String
     description: String
     image: String
     price: Int
-  }
-
-  type Category {
-    _id: ID
-    name: String
-    parts: [Part]
-  }
-
-  type Year {
-    _id: ID
-    name: String
-    categories: [Category]
+    year: Number
+    category: Category
   }
 
   type Model {
     _id: ID
     name: String
-    years: [Year]
+    parts: [Part]
   }
 
   type Make {
@@ -49,7 +44,6 @@ const typeDefs = gql`
     user: User
     parts: [Part]
     categories: [Category]
-    years: [Year]
     models: [Model]
     makes: [Make]
   }
