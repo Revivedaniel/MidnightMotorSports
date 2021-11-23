@@ -19,7 +19,7 @@ const typeDefs = gql`
     description: String
     image: String
     price: Int
-    year: Number
+    year: Int
     category: Category
   }
 
