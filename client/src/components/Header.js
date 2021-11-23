@@ -27,8 +27,8 @@ export default function Header() {
             <header>
                 <a href="/"><img src={Midnight} alt='midnight logo' className='midnightLogo' /></a>
                 <h1 className='headerPhrase'>"The Real Thang Happens At Night"</h1>
-                <img src={Instagram} alt='instagram logo' className='instagramLogo' />
-                <img src={Facebook} alt='facebook logo' className='facebookLogo' />
+                <a href='https://www.instagram.com/949midnight.motorsports/' target='https://www.instagram.com/949midnight.motorsports/'><img src={Instagram} alt='instagram logo' className='instagramLogo' /></a>
+                <a href='https://www.facebook.com/949midnight.motorsports' target='https://www.facebook.com/949midnight.motorsports'><img src={Facebook} alt='facebook logo' className='facebookLogo' /></a>
                 <h2 className='accountroute'>
                     <a href="/" onClick={() => Auth.logout()} style={{ textDecoration: 'none' }}>
                         Logout

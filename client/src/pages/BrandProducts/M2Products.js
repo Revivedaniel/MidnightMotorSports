@@ -10,7 +10,7 @@ export default function M2Products() {
                 
             </div>
             <div className='buttoncontainer'>
-            <DropdownButton as={ButtonGroup} key='end' id="dropdown-basic-button" drop='end' title="Force Induction">
+            <DropdownButton as={ButtonGroup} key='end' id="dropdown-basic-button" drop='end' title="Forced Induction">
                     <Dropdown.Item href="#/action-1">Turbo Kits</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Intercoolers</Dropdown.Item>
                     <Dropdown.Item href="#/action-3">Blow Off Valves</Dropdown.Item>
