@@ -1,5 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const { User, Part, Category, Make, Model, Year } = require("../models");
+const { User, Part, Category, Make, Model } = require("../models");
 const { signToken } = require("../utils/auth");
 const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
@@ -16,22 +16,17 @@ const resolvers = {
     },
     // All parts query
     parts: async () => {
-      const parts = await Part.find({})
+      const parts = await Part.find({}).populate("category");
 
       return parts;
     },
     categories: async () => {
-      const categories = await Category.find({}).populate("parts");
+      const categories = await Category.find({});
 
       return categories;
     },
-    years: async () => {
-      const years = await Year.find({}).populate("categories");
-
-      return years;
-    },
     models: async () => {
-      const models = await Model.find({}).populate("years")
+      const models = await Model.find({}).populate("parts")
 
       return models;
     },
