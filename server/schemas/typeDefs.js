@@ -46,6 +46,10 @@ const typeDefs = gql`
     categories: [Category]
     models: [Model]
     makes: [Make]
+    make(_id: ID!): Make
+    model(_id: ID!): Model
+    category(_id: ID!): Category
+    part(_id: ID!): Part
   }
 
   type Mutation {

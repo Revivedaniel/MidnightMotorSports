@@ -34,6 +34,27 @@ const resolvers = {
       const makes = await Make.find({}).populate("models")
 
       return makes;
+    },
+    //single resolvers
+    make: async (parent, args) => {
+      const make = await Make.findById(args.id).populate("models");
+
+      return make;
+    },
+    model: async (parent, args) => {
+      const model = await Model.findById(args.id).populate("parts");
+
+      return model;
+    },
+    part: async (parents, args) => {
+      const part = await Part.findById(args.id).populate("category");
+
+      return part;
+    },
+    category: async (parents, args) => {
+      const category = await Category.findById(args.id);
+
+      return category;
     }
   },
   Mutation: {
