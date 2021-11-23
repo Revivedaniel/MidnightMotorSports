@@ -7,6 +7,8 @@ body {
     min-height: 100vh;
 }
 
+
+
 /* HEADER STYLE */
  
 header {
@@ -105,13 +107,33 @@ li:hover{
 
 .carouselbox {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-around;
     margin:5% 0% 0% 0%;
 }
 
 .carousel {
     width: 800px;
     height: 700px;
+}
+
+.aboutinfo {
+    background: black;
+    background-position: 50%;
+    background-repeat: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    box-shadow: 0px 0px 5px 5px black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    width: 700px;
+    height: 600px;
 }
 
 /* PRODUCTS STYLE */
@@ -300,7 +322,7 @@ footer {
  input {
      background: none;
      border-radius: 20px;
-     color: white;
+     color: #0d6efd;
      padding: 10px;
      font-weight: bold;
      border: 2px solid white;
@@ -308,7 +330,7 @@ footer {
  }
 
  input:hover {
-     box-shadow: 0px 0px 4px 4px white;
+     box-shadow: 0px 0px 3px 3px white;
  }
  input:focus {
      box-shadow: 0px 0px 7px 7px white,0px 0px 7px 7px white;
@@ -356,7 +378,7 @@ footer {
      margin-top: 20px;
      padding: 10px;
      border-radius: 20px;
-     background: linear-gradient(rgb(49, 1, 49),rgb(3, 3, 66));
+     background: linear-gradient(rgb(237, 13, 237),rgb(3, 3, 66));
  }
 
  .submitBtn:hover{
