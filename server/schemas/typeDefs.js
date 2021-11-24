@@ -6,6 +6,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
+    orders: [Order]
   }
 
   type Category {
@@ -21,6 +22,7 @@ const typeDefs = gql`
     price: Int
     year: Int
     category: Category
+    quantity: Int
   }
 
   type Model {
@@ -40,23 +42,35 @@ const typeDefs = gql`
     user: User
   }
 
+  type Order {
+    _id: ID
+    purchaseDate: String
+    parts: [Part]
+  }
+
+  type Checkout {
+    session: ID
+  }
+
   type Query {
     user: User
     parts: [Part]
     categories: [Category]
     models: [Model]
     makes: [Make]
-    make(id: ID!): Make
-    model(id: ID!): Model
-    category(id: ID!): Category
-    part(id: ID!): Part
+    make(_id: ID!): Make
+    model(_id: ID!): Model
+    category(_id: ID!): Category
+    part(_id: ID!): Part
+    order(_id: ID!): Order
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
+    addOrder(parts: [ID]!): Order
   }
-  `;
+`;
 
 module.exports = typeDefs;

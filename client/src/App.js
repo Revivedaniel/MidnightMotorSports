@@ -1,7 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+// util
+import { StoreProvider } from './utils/GlobalState';
 
 // pages
 import HomePage from './pages/HomePage';
@@ -29,8 +33,22 @@ import Nav from './components/Nav';
 import Header from './components/Header';
 import Footer from './components/Footer'
 
-const client = new ApolloClient({
+const httpLink = createHttpLink({
     uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+    const token = localStorage.getItem('id_token');
+    return {
+        headers: {
+            ...headers,
+            authorization: token ? `Bearer ${token}` : '',
+        },
+    };
+});
+
+const client = new ApolloClient({
+    link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
 });
 
@@ -38,28 +56,30 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <Router>
-                <Header />
-                <Nav />
-                <Switch>
-                    <Route exact path="/" component={HomePage} />
-                    <Route exact path="/login" component={Login} />
-                    <Route exact path="/checkout" component={Checkout} />
-                    <Route exact path="/products" component={Products} />
-                    <Route exact path="/contact" component={Contact} />
-                    <Route exact path="/bmw" component={BMWProducts} />
-                    <Route exact path="/bmw/m2" component={M2} />
-                    <Route exact path="/bmw/m4" component={M4} />
+                <StoreProvider>
+                    <Header />
+                    <Nav />
+                    <Switch>
+                        <Route exact path="/" component={HomePage} />
+                        <Route exact path="/login" component={Login} />
+                        <Route exact path="/checkout" component={Checkout} />
+                        <Route exact path="/products" component={Products} />
+                        <Route exact path="/contact" component={Contact} />
+                        <Route exact path="/bmw" component={BMWProducts} />
+                        <Route exact path="/bmw/m2" component={M2} />
+                        <Route exact path="/bmw/m4" component={M4} />
 
-                    <Route exact path="/mitsubishi" component={MitsubishiProducts} />
-                    <Route exact path="/mitsubishi/evo789" component={Evo789} />
-                    <Route exact path="/mitsubishi/evox" component={EvoX} />
+                        <Route exact path="/mitsubishi" component={MitsubishiProducts} />
+                        <Route exact path="/mitsubishi/evo789" component={Evo789} />
+                        <Route exact path="/mitsubishi/evox" component={EvoX} />
 
-                    <Route exact path="/subaru" component={SubaruProducts} />
-                    <Route exact path="/subaru/brz" component={Brz} />
-                    <Route exact path="/subaru/sti" component={Sti} />
+                        <Route exact path="/subaru" component={SubaruProducts} />
+                        <Route exact path="/subaru/brz" component={Brz} />
+                        <Route exact path="/subaru/sti" component={Sti} />
 
-                    <Route component={NoRoute} />
-                </Switch>
+                        <Route component={NoRoute} />
+                    </Switch>
+                </StoreProvider>
                 <div className="footer-ghost"></div>
                 <Footer />
             </Router>
