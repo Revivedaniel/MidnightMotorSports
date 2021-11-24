@@ -9,10 +9,10 @@ const orderSchema = new Schema({
     default: Date.now
   },
 
-  products: [
+  parts: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Product'
+      ref: 'Part'
     }
   ]
   
