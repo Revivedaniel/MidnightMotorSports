@@ -6,6 +6,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     email: String
+    orders: [Order]
   }
 
   type Category {
@@ -21,6 +22,7 @@ const typeDefs = gql`
     price: Int
     year: Int
     category: Category
+    quantity: Int
   }
 
   type Model {
@@ -40,6 +42,16 @@ const typeDefs = gql`
     user: User
   }
 
+  type Order {
+    _id: ID
+    purchaseDate: String
+    parts: [Part]
+  }
+
+  type Checkout {
+    session: ID
+  }
+
   type Query {
     user: User
     parts: [Part]
@@ -56,7 +68,8 @@ const typeDefs = gql`
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
+    addOrder(parts: [ID]!): Order
   }
-  `;
+`;
 
 module.exports = typeDefs;
