@@ -12,9 +12,8 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_MODEL = gql`
-    query getModel($_id: ID) {
-        models(_id: $_id) {
-            _id
+    query getModel($_id: ID!) {
+        model(_id: $_id) {
             name
             parts {
                 _id
@@ -23,7 +22,10 @@ export const QUERY_MODEL = gql`
                 image
                 price
                 year
-                category
+                category {
+                    _id
+                    name
+                }
             }
         }
     }

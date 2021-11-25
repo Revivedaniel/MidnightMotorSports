@@ -1,7 +1,6 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Part, Category, Make, Model, Order } = require("../models");
 const { signToken } = require("../utils/auth");
-// const stripe = require("stripe")("sk_test_4eC39HqLyjWDarjtT1zdp7dc");
 
 const resolvers = {
   Query: {
@@ -17,13 +16,15 @@ const resolvers = {
         return user;
       }
 
-      throw new AuthenticationError("Not logged in");
+      throw new AuthenticationError("Please, log in first!");
     },
     // All parts query
-    parts: async (parent, { category }) => {
+    parts: async (parent, { category, name }) => {
       let params = {};
 
       if (category) params.category = category;
+
+      if (name) params.name = name;
 
       const parts = await Part.find(params).populate("category");
 
@@ -46,22 +47,22 @@ const resolvers = {
     },
     //single resolvers
     make: async (parent, args) => {
-      const make = await Make.findById(args.id).populate("models");
+      const make = await Make.findById(args._id).populate("models");
 
       return make;
     },
     model: async (parent, args) => {
-      const model = await Model.findById(args.id).populate("parts");
+      const model = await Model.findById(args._id).populate("parts");
 
       return model;
     },
     part: async (parents, args) => {
-      const part = await Part.findById(args.id).populate("category");
+      const part = await Part.findById(args._id).populate("category");
 
       return part;
     },
     category: async (parents, args) => {
-      const category = await Category.findById(args.id);
+      const category = await Category.findById(args._id);
 
       return category;
     },
@@ -75,8 +76,8 @@ const resolvers = {
         return user.orders.id(_id);
       }
 
-      throw new AuthenticationError('Not logged in');
-    }
+      throw new AuthenticationError('Please, log in first!');
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -92,19 +93,19 @@ const resolvers = {
         });
       }
 
-      throw new AuthenticationError("Not logged in");
+      throw new AuthenticationError("Please, log in first!");
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("Email and/or password is incorrect!");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError("Incorrect credentials");
+        throw new AuthenticationError("Email and/or password is incorrect!");
       }
 
       const token = signToken(user);
@@ -112,7 +113,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { parts }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ parts });
 
@@ -121,7 +121,7 @@ const resolvers = {
         return order;
       }
 
-      throw new AuthenticationError('Not logged in');
+      throw new AuthenticationError('Please, log in first!');
     }
   },
 };

@@ -62,7 +62,7 @@ function App() {
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path="/checkout" component={Checkout} />
+                        {/* <Route exact path="/checkout" component={Checkout} /> */}
                         <Route exact path="/products" component={Products} />
                         <Route exact path="/contact" component={Contact} />
                         <Route exact path="/bmw" component={BMWProducts} />
