@@ -1,6 +1,7 @@
 const { AuthenticationError } = require("apollo-server-express");
 const { User, Part, Category, Make, Model, Order } = require("../models");
 const { signToken } = require("../utils/auth");
+const stripe = require('stripe')(process.env.STRIPE_SECRET);
 
 const resolvers = {
   Query: {
@@ -78,6 +79,45 @@ const resolvers = {
 
       throw new AuthenticationError('Please, log in first!');
     },
+    // Stripe
+    checkout: async (parent, args, context) => {
+      // Verifying user is on our site
+      const url = new URL(context.headers.referer).origin;
+      // Creating new order with parts
+      const order = new Order({ parts: args.parts });
+      // Defining empty line items
+      const line_items = [];
+      // Populating the parts on the order and deconstrucing the parts array
+      const { parts } = await order.populate('parts').execPopulate();
+      // for each part create a stripe product, pricing, and line
+      for (let i = 0; i < parts.length; i++) {
+        const product = await stripe.parts.create({
+          name: parts[i].name,
+          description: parts[i].description,
+          images: [`${url}/images/${parts[i].image}`]
+        });
+        const price = await stripe.prices.create({
+          product: product.id,
+          unit_amount: parts[i].price * 100,
+          currency: 'usd',
+        });
+
+        line_items.push({
+          price: price.id,
+          quantity: 1
+        });
+      }
+      // create stripe checkout session
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items,
+        mode: 'payment',
+        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${url}/`
+      });
+      // return the session
+      return { session: session.id };
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
