@@ -63,6 +63,7 @@ const typeDefs = gql`
     category(_id: ID!): Category
     part(_id: ID!): Part
     order(_id: ID!): Order
+    checkout(parts: [ID]!): Checkout
   }
 
   type Mutation {
