@@ -17,7 +17,7 @@ export default class Jumbotron extends Component {
                 <Carousel>
   <Carousel.Item interval={1000}>
     <img
-      className="d-block w-100"
+      className="d-block w-100 carouselImg"
       src={R35swap}
       alt="First slide"
       width='500px'
@@ -30,7 +30,7 @@ export default class Jumbotron extends Component {
   </Carousel.Item>
   <Carousel.Item interval={500}>
     <img
-      className="d-block w-100"
+      className="d-block w-100 carouselImg"
       src={Whitebmw}
       alt="Second slide"
       width='500px'
@@ -42,7 +42,7 @@ export default class Jumbotron extends Component {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
+      className="d-block w-100 carouselImg"
       src={Brakeswap}
       alt="Third slide"
       width='500px'

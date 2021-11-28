@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function navBar() {
-    return <nav>
+    return <nav style={{marginTop: '20px'}}>
         <ul className='unorderedList'>
             <li>
                 <Link to="/" style={{ textDecoration: 'none' }}>
