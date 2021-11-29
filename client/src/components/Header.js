@@ -18,7 +18,7 @@ if (!Auth.loggedIn()) {
 } else {
     button =
         <h2 className='accountroute'>
-            <a href="/" onClick={() => Auth.logout()} style={{ textDecoration: 'none' }}>
+            <a href="/" onClick={() => Auth.logout()} style={{ textDecoration: 'none',fontSize: '2.5vw' }}>
                 Logout
             </a>
         </h2>
