@@ -544,3 +544,9 @@ textarea {
     width: 89.3vw;
 }
 }
+
+@media screen and (max-width: 500px) {
+  .unorderedList {
+    font-size: 19px;
+  }
+}
