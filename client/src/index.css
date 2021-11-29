@@ -113,8 +113,14 @@ li:hover {
 }
 
 .carousel {
-  width: 800px;
-  height: 700px;
+  position: relative;
+  margin: 0 auto;
+  width: 70vw;
+}
+
+.carouselImg {
+  width: 100%;
+  height: auto;
 }
 
 .aboutinfo {
@@ -530,11 +536,11 @@ textarea {
 /*Responsiveness*/
 /*Header breaking points*/
 /*1328, */
-.carouselImg{
-    height: auto;
-}
+
 @media screen and (max-width: 922px) {
-    .carousel {
-        width: 87%;
-    }
+  .carousel {
+    position: relative;
+    margin: 0 auto;
+    width: 89.3vw;
+}
 }
