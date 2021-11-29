@@ -55,7 +55,7 @@ export default class Jumbotron extends Component {
 </Carousel>
             </div>
             <p className='aboutinfo'>
-<img src={Midnightdoor}  width='650px' />
+<img src={Midnightdoor}  width='100%' />
 
      Midnight Motorsports is a performance shop with 
      the goal to put in the best quality of work to
