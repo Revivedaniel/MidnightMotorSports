@@ -411,7 +411,8 @@ textarea {
 .productscontainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  
+  
 }
 
 .buttoncontainer {
@@ -422,8 +423,23 @@ textarea {
   justify-content: center;
   align-items: center;
   width: 200px;
+  height: 100%;
   border: 2px solid white;
   border-radius: 10px;
+}
+.partscontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+border: 2px solid white;
+height: 100%;
+border-radius: 20px;
+margin: 2%;
+}
+
+.card {
+  height: 500px;
+  border-radius: 40px;
 }
 
 #dropdown-basic-button {
@@ -440,6 +456,7 @@ textarea {
 .topboxevo7 {
   background-image: url(./images//evo9wallpaper.jpg);
   background-position: center;
+  background-repeat: no-repeat;
   background-size: 100%;
   margin-top: 100px;
   display: flex;

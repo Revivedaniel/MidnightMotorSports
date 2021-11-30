@@ -25,14 +25,17 @@ export default function M2Products() {
     }
 
     return (
-        <div className='productscontainer d-flex'>
-            <div className='topboxm2'>
+        <>
+         <div className='topboxm2'>
                 <h1 className='carmodelname'>M2</h1>
             </div>
+        
+        <div className='productscontainer'>
+           
 
             <CategoryNav />
 
-            <div id='m2PartList' className='d-flex'>
+            <div id='m2PartList' className='partscontainer'>
                 {partsData &&
                     partsData.map(part => {
                         return (
@@ -49,5 +52,6 @@ export default function M2Products() {
                     })}
             </div>
         </div>
+        </>
     )
 }
