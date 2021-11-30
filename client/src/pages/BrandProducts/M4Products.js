@@ -24,13 +24,16 @@ export default function M4Products() {
     }
 
     return (
-        <div className='productscontainer'>
-            <div className='topboxm4'>
+        <>
+        
+        <div className='topboxm4'>
                 <h1 className='carmodelname'>M4</h1>
             </div>
+        <div className='productscontainer'>
+            
             <CategoryNav />
 
-            <div id='m4PartList' className='d-flex'>
+            <div id='m4PartList' className='partscontainer'>
                 {partsData &&
                     partsData.map(part => {
                         return (
@@ -48,5 +51,6 @@ export default function M4Products() {
             </div>
 
         </div>
+        </>
     )
 }
