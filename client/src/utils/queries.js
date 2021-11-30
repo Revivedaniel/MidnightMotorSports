@@ -12,21 +12,30 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_MODEL = gql`
-    query getModel($_id: ID!) {
-        model(_id: $_id) {
-            name
-            parts {
-                _id
-                name
-                description
-                image
-                price
-                year
-                category {
-                    _id
-                    name
-                }
-            }
-        }
+query getModel($name: String!) {
+  model(name: $name) {
+    name
+    parts {
+      _id
+      name
+      description
+      image
+      price
+      year
+      category {
+        _id
+        name
+      }
     }
+  }
+}
+`;
+
+export const QUERY_CATEGORIES = gql`
+query {
+  categories {
+    _id
+    name
+  }
+}
 `;

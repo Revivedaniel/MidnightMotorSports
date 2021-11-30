@@ -76,10 +76,10 @@ db.once("open", async () => {
   let partSeeds = [];
 
   for (let index = 0; index < partsCount; index++) {
-    let outline = {
+    const outline = {
       name: `Part ${index}`,
       description: `Part ${index} description`,
-      image: `http://localhost:3001/images/${index}`,
+      image: `http://localhost:3001/images/part${index}`,
       price: Number(index + 1),
       year: index,
       category: categories[Math.floor(index / 3)]._id,

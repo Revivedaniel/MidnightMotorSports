@@ -58,7 +58,7 @@ const typeDefs = gql`
     parts(category: ID, name: String): [Part]
     category(_id: ID!): Category
     categories: [Category]
-    model(_id: ID!): Model
+    model(name: String!): Model
     models: [Model]
     make(_id: ID!): Make
     makes: [Make]

@@ -52,13 +52,13 @@ const resolvers = {
 
       return make;
     },
-    model: async (parent, args) => {
-      const model = await Model.findById(args._id).populate("parts");
+    model: async (parent, { name }) => {
+      const model = await Model.findOne({ name: name }).populate("parts");
 
       return model;
     },
-    part: async (parents, args) => {
-      const part = await Part.findById(args._id).populate("category");
+    part: async (parents, { _id }) => {
+      const part = await Part.findById(_id).populate("category");
 
       return part;
     },
