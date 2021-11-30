@@ -9,7 +9,7 @@ import { StoreProvider } from './utils/GlobalState';
 
 // pages
 import HomePage from './pages/HomePage';
-import Checkout from './pages/Checkout';
+import Cart from './components/Cart';
 import Login from './pages/Login';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
@@ -79,6 +79,7 @@ function App() {
 
                         <Route component={NoRoute} />
                     </Switch>
+                    <Cart />
                 </StoreProvider>
                 <div className="footer-ghost"></div>
                 <Footer />
