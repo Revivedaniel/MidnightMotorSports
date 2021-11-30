@@ -426,6 +426,7 @@ textarea {
 
 .card {
   width: 18rem;
+  border-radius: 40px;
 }
 
 .buttoncontainer {
@@ -448,11 +449,6 @@ textarea {
   height: 100%;
   border-radius: 20px;
   margin: 2%;
-}
-
-.card {
-  height: 500px;
-  border-radius: 40px;
 }
 
 #dropdown-basic-button {

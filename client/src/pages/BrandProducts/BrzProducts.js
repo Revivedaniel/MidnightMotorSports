@@ -20,7 +20,6 @@ export default function BrzProducts() {
     }
 
     const cardStyle = {
-        width: "60vw",
         margin: '10px'
     }
 
