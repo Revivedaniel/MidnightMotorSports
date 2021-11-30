@@ -57,30 +57,34 @@ export default function Brzparts() {
     }
 
     return (
-        <div className='partscontainer'>
+        <>
+
             <div className='topboxbrz'>
                 <h1 className='carmodelname'>BRZ</h1>
             </div>
 
-            <CategoryNav />
+            <div className='productscontainer'>
 
-            <div id='brzPartList' className='d-flex'>
-                {partsData &&
-                    partsData.map(part => {
-                        return (
-                            <div className="card" style={cardStyle}>
-                                <img className="card-img-top" src={part.image} alt="Card image cap" />
-                                <div className="card-body">
-                                    <h5 className="card-title">{part.name}</h5>
-                                    <p className="card-description">{part.description}</p>
-                                    <p className="card-price">{part.price}</p>
-                                    <a href="#" class="btn btn-primary">Add To Cart</a>
+                <CategoryNav />
+
+                <div id='brzPartList' className='partscontainer'>
+                    {partsData &&
+                        partsData.map(part => {
+                            return (
+                                <div className="card" style={cardStyle}>
+                                    <img className="card-img-top" src={part.image} alt="Card image cap" />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{part.name}</h5>
+                                        <p className="card-description">{part.description}</p>
+                                        <p className="card-price">{part.price}</p>
+                                        <a href="#" class="btn btn-primary">Add To Cart</a>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })}
-            </div>
+                            )
+                        })}
+                </div>
 
-        </div>
+            </div>
+        </>
     )
 }

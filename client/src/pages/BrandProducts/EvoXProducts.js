@@ -24,13 +24,16 @@ export default function EvoXProducts() {
     }
 
     return (
-        <div className='productscontainer'>
-            <div className='topboxevox'>
+        <>
+        
+        <div className='topboxevox'>
                 <h1 className='carmodelname'>EVOX</h1>
             </div>
+        <div className='productscontainer'>
+            
             <CategoryNav />
 
-            <div id='evoxPartList' className='d-flex'>
+            <div id='evoxPartList' className='partscontainer'>
                 {partsData &&
                     partsData.map(part => {
                         return (
@@ -48,5 +51,6 @@ export default function EvoXProducts() {
             </div>
 
         </div>
+        </>
     )
 }

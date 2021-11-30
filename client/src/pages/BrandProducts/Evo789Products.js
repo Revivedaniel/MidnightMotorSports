@@ -24,30 +24,34 @@ export default function Evo789Products() {
     }
 
     return (
-        <div className='productscontainer'>
+
+        <>
             <div className='topboxevo7'>
                 <h1 className='carmodelname'>EVO7/8/9</h1>
 
             </div>
-            <CategoryNav />
+            <div className='productscontainer'>
 
-            <div id='evo789PartList' className='d-flex'>
-                {partsData &&
-                    partsData.map(part => {
-                        return (
-                            <div className="card" style={cardStyle}>
-                                <img className="card-img-top" src={part.image} alt="Card image cap" />
-                                <div class ="card-body">
-                                <h5 class ="card-title">{part.name}</h5>
-                                <p class ="card-description">{part.description}</p>
-                                <p class ="card-price">{part.price}</p>
-                                <a href="#" class ="btn btn-primary">Add To Cart</a>
+                <CategoryNav />
+
+                <div id='evo789PartList' className='partscontainer'>
+                    {partsData &&
+                        partsData.map(part => {
+                            return (
+                                <div className="card" style={cardStyle}>
+                                    <img className="card-img-top" src={part.image} alt="Card image cap" />
+                                    <div class="card-body">
+                                        <h5 class="card-title">{part.name}</h5>
+                                        <p class="card-description">{part.description}</p>
+                                        <p class="card-price">{part.price}</p>
+                                        <a href="#" class="btn btn-primary">Add To Cart</a>
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })}
-            </div>
+                            )
+                        })}
+                </div>
 
-        </div>
+            </div>
+        </>
     )
 }

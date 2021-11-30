@@ -79,7 +79,7 @@ db.once("open", async () => {
     const outline = {
       name: `Part ${index}`,
       description: `Part ${index} description`,
-      image: `http://localhost:3001/images/part${index}`,
+      image: `http://localhost:3000/Partsimages/part${index}.jpg`,
       price: Number(index + 1),
       year: index,
       category: categories[Math.floor(index / 3)]._id,
