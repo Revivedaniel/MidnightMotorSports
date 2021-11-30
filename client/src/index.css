@@ -611,6 +611,16 @@ textarea {
     width: 100.2vw;
     height: 50.3vw;
   }
+  .m2img {
+    margin-top: 20px;
+    width: 93.3vw;
+    height: 49.9vw;
+}
+.m4img {
+  margin: 10px;
+  width: 88.5vw;
+  height: 48.3vw;
+}
 }
 
 @media screen and (max-width: 500px) {
