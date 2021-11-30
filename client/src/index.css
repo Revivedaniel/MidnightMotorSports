@@ -575,6 +575,19 @@ textarea {
   width: 40.2vw;
   height: 40.2vw;
 }
+.brzimg {
+  margin-top: 110px;
+  width: 81vw;
+  height: 39.9vw;
+}
+.stiimg {
+  margin: 10px;
+  width: 90.85vw;
+  height: 48.3vw;
+}
+.carmodelname {
+  font-size: 12vw;
+}
 }
 
 @media screen and (max-width: 500px) {
