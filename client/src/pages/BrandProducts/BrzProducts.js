@@ -25,14 +25,17 @@ export default function BrzProducts() {
     }
 
     return (
-        <div className='productscontainer'>
-            <div className='topboxbrz'>
+        <>
+       
+       <div className='topboxbrz'>
                 <h1 className='carmodelname'>BRZ</h1>
             </div>
 
+        <div className='productscontainer'>
+            
             <CategoryNav />
 
-            <div id='brzPartList' className='d-flex'>
+            <div id='brzPartList' className='partscontainer'>
                 {partsData &&
                     partsData.map(part => {
                         return (
@@ -50,5 +53,6 @@ export default function BrzProducts() {
             </div>
 
         </div>
+        </>
     )
 }

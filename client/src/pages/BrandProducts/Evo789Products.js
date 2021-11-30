@@ -24,14 +24,17 @@ export default function Evo789Products() {
     }
 
     return (
-        <div className='productscontainer'>
+        
+       <>
             <div className='topboxevo7'>
                 <h1 className='carmodelname'>EVO7/8/9</h1>
 
             </div>
+ <div className='productscontainer'>
+
             <CategoryNav />
 
-            <div id='evo789PartList' className='d-flex'>
+            <div id='evo789PartList' className='partscontainer'>
                 {partsData &&
                     partsData.map(part => {
                         return (
@@ -49,5 +52,6 @@ export default function Evo789Products() {
             </div>
 
         </div>
+        </>
     )
 }

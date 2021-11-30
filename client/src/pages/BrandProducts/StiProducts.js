@@ -24,15 +24,18 @@ export default function StiProducts() {
     }
 
     return (
-        <div className='productscontainer'>
-            <div className='topboxsti'>
+        <>
+        <div className='topboxsti'>
                 <h1 className='carmodelname'>STI</h1>
 
             </div>
+        
+        <div className='productscontainer'>
+            
 
             <CategoryNav />
 
-            <div id='stiPartList' className='d-flex'>
+            <div id='stiPartList' className='partscontainer'>
                 {partsData &&
                     partsData.map(part => {
                         return (
@@ -50,5 +53,6 @@ export default function StiProducts() {
             </div>
 
         </div>
+        </>
     )
 }
