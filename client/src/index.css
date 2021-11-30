@@ -716,6 +716,23 @@ textarea {
   }
 }
 
+@media screen and (max-width: 580px) {
+  .formcontainer {
+    margin-top: 80px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+    width: 84vw;
+}
+.formcontainer > * {
+  width: 100%;
+}
+}
+
 @media screen and (max-width: 500px) {
   .unorderedList {
     font-size: 19px;
@@ -743,4 +760,5 @@ textarea {
     width: 60vw;
     margin: 10px;
   }
+  
 }
