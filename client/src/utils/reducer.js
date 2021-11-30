@@ -24,30 +24,30 @@ export const reducer = (state, action) => {
       return {
         ...state,
         cartOpen: true,
-        cart: [...state.cart, action.product],
+        cart: [...state.cart, action.part],
       };
 
     case "ADD_MULTIPLE_TO_CART":
       return {
         ...state,
-        cart: [...state.cart, ...action.products],
+        cart: [...state.cart, ...action.parts],
       };
 
     case "UPDATE_CART_QUANTITY":
       return {
         ...state,
         cartOpen: true,
-        cart: state.cart.map(product => {
-          if (action._id === product._id) {
-            product.purchaseQuantity = action.purchaseQuantity
+        cart: state.cart.map(part => {
+          if (action._id === part._id) {
+            part.purchaseQuantity = action.purchaseQuantity
           }
-          return product
+          return part
         })
       };
 
     case "REMOVE_FROM_CART":
-      let newState = state.cart.filter(product => {
-        return product._id !== action._id;
+      let newState = state.cart.filter(part => {
+        return part._id !== action._id;
       });
 
       return {
