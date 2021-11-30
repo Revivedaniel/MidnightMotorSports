@@ -13,7 +13,7 @@ import Bmw from '../images/transparentbmwlogo.png'
 
 export default function Products() {
     return (
-        <div>
+        <div style={{margin: '0 2%'}}>
             <div className='brandimg'>
                 <a href='/Mitsubishi'><img src={Mitusbishi} className='mitlogo' /></a>
                 <a href='/Subaru'><img src={Subaru} className='subarulogo' /></a>
