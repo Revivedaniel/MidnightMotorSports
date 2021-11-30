@@ -1,55 +1,84 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import CategoryNav from '../../components/CategoryNav'
-
 import { useQuery } from '@apollo/client';
-import { QUERY_CATEGORIES } from '../../utils/queries';
+
+import CategoryNav from '../../components/CategoryNav'
+import PartCard from '../../components/PartCard'
+
+import { useStoreContext } from '../../utils/GlobalState';
 import { QUERY_MODEL } from '../../utils/queries';
+import { idbPromise } from '../../utils/helpers';
 
 export default function M4Products() {
-    let partsData
+    const [state, dispatch] = useStoreContext();
+
+    const { currentCategory } = state;
 
     const { loading, data } = useQuery(QUERY_MODEL, {
         variables: { name: 'm4' }
-    })
+    });
 
-    if (!loading) {
-        console.log(data.model.parts)
+    let partsData
+
+    if (data) {
         partsData = data.model.parts
     }
 
-    const cardStyle = {
-        margin: '10px'
+    useEffect(() => {
+        if (data) {
+            dispatch({
+                type: 'UPDATE_PARTS',
+                parts: data.model.parts,
+            });
+            data.model.parts.forEach((part) => {
+                idbPromise('parts', 'put', part);
+            });
+        } else if (!loading) {
+            idbPromise('parts', 'get').then((parts) => {
+                dispatch({
+                    type: 'UPDATE_PARTS',
+                    parts: parts,
+                });
+            });
+        }
+    }, [data, loading, dispatch]);
+
+    function filterParts() {
+        if (!currentCategory) {
+            return partsData;
+        }
+
+        return partsData.filter(
+            (part) => part.category._id === currentCategory
+        );
     }
 
     return (
         <>
-        
-        <div className='topboxm4'>
+            <div className='topboxm4'>
                 <h1 className='carmodelname'>M4</h1>
             </div>
-        <div className='productscontainer'>
-            
-            <CategoryNav />
-
-            <div id='m4PartList' className='partscontainer'>
-                {partsData &&
-                    partsData.map(part => {
-                        return (
-                            <div className="card" style={cardStyle}>
-                                <img className="card-img-top" src={part.image} alt="Card image cap" />
-                                <div class ="card-body">
-                                <h5 class ="card-title">{part.name}</h5>
-                                <p class ="card-description">{part.description}</p>
-                                <p class ="card-price">{part.price}</p>
-                                <a href="#" class ="btn btn-primary">Add To Cart</a>
-                                </div>
-                            </div>
-                        )
-                    })}
+            <div className='partsContainer d-flex justify-content-around'>
+                <CategoryNav />
+                <div id='m4PartList' className='partscontainer col-10 d-flex justify-content-evenly'>
+                    {partsData &&
+                        filterParts().map(part => {
+                            return (
+                                <PartCard
+                                    key={part._id}
+                                    _id={part._id}
+                                    model={'M4'}
+                                    image={part.image}
+                                    name={part.name}
+                                    price={part.price}
+                                    description={part.description}
+                                    quantity={part.quantity}
+                                    year={part.year}
+                                />
+                            )
+                        })}
+                </div>
             </div>
-
-        </div>
         </>
     )
 }

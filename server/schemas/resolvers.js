@@ -89,15 +89,15 @@ const resolvers = {
       const line_items = [];
       // Populating the parts on the order and deconstrucing the parts array
       const { parts } = await order.populate('parts').execPopulate();
-      // for each part create a stripe product, pricing, and line
+      // for each part create a stripe part, pricing, and line
       for (let i = 0; i < parts.length; i++) {
-        const product = await stripe.parts.create({
+        const part = await stripe.parts.create({
           name: parts[i].name,
           description: parts[i].description,
           images: [`${url}/images/${parts[i].image}`]
         });
         const price = await stripe.prices.create({
-          product: product.id,
+          part: part.id,
           unit_amount: parts[i].price * 100,
           currency: 'usd',
         });
@@ -112,7 +112,7 @@ const resolvers = {
         payment_method_types: ['card'],
         line_items,
         mode: 'payment',
-        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${url}/`,
         cancel_url: `${url}/`
       });
       // return the session

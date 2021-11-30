@@ -26,6 +26,7 @@ query getModel($name: String!) {
         _id
         name
       }
+      quantity
     }
   }
 }
@@ -41,8 +42,8 @@ query {
 `;
 
 export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
+  query getCheckout($parts: [ID]!) {
+    checkout(parts: $parts) {
       session
     }
   }

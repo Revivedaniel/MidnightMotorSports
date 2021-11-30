@@ -5,6 +5,7 @@ import { QUERY_CHECKOUT } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import CartItem from './CartItem';
 import Auth from '../utils/auth';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { useStoreContext } from '../utils/GlobalState';
 import '../../src/index.css';
 
@@ -62,7 +63,7 @@ const Cart = () => {
     if (!state.cartOpen) {
         return (
             <div className="cart-closed" onClick={toggleCart}>
-                <span role="img" aria-label="trash">
+                <span role="img" aria-label="cart" style={{cursor:'pointer'}}>
                     🛒
                 </span>
             </div>
@@ -71,21 +72,21 @@ const Cart = () => {
 
     return (
         <div className="cart">
-            <div className="close" onClick={toggleCart}>
-                [close]
+            <div className="close" onClick={toggleCart} style={{cursor:'pointer'}}>
+                Close ❌ 
             </div>
             <h2>Shopping Cart</h2>
-            {state.cart.length ? (
+            {state.cart.length && Auth.loggedIn() ? (
                 <div>
                     {state.cart.map((item) => (
                         <CartItem key={item._id} item={item} />
                     ))}
 
-                    <div className="flex-row space-between">
+                    <div className="d-flex justify-content-between">
                         <strong>Total: ${calculateTotal()}</strong>
 
                         {Auth.loggedIn() ? (
-                            <button onClick={submitCheckout}>Checkout</button>
+                            <button type="button" className="btn btn-success" onClick={submitCheckout}>Checkout</button>
                         ) : (
                             <span>(log in to check out)</span>
                         )}
@@ -93,10 +94,7 @@ const Cart = () => {
                 </div>
             ) : (
                 <h3>
-                    <span role="img" aria-label="shocked">
-                        😱
-                    </span>
-                    You haven't added anything to your cart yet!
+                    Your Midnight Motorsports cart is empty.
                 </h3>
             )}
         </div>

@@ -49,23 +49,18 @@ db.once("open", async () => {
   await Category.deleteMany();
 
   const categorySeeds = [
-    { name: 'Turbo Kits' },
-    { name: 'Intercoolers' },
-    { name: 'Blow Off Valves' },
     { name: 'Coilovers' },
-    { name: 'Lowering Springs' },
-    { name: 'Shocks' },
-    { name: 'Mufflers' },
-    { name: 'Manifolds' },
-    { name: 'Heat Shields' },
-    { name: 'Calipers' },
-    { name: 'Brake Rotors' },
-    { name: 'Brake Pads' }
+    { name: 'Turbo Kit' },
+    { name: 'Intercooler Kit' },
+    { name: 'Exhaust System' },
+    { name: 'Brake Kit'},
+    { name: 'Blow Off Valve'},
   ];
 
   const categories = await Category.insertMany(categorySeeds);
 
   console.log("Categories seeded");
+  console.log(categories);
 
   // Part seeds
   await Part.deleteMany();
@@ -78,15 +73,20 @@ db.once("open", async () => {
   for (let index = 0; index < partsCount; index++) {
     const outline = {
       name: `Part ${index}`,
-      description: `Part ${index} description`,
+      description: categories[(index % 6)].name,
       image: `http://localhost:3000/Partsimages/part${index}.jpg`,
-      price: Number(index + 1),
-      year: index,
-      category: categories[Math.floor(index / 3)]._id,
-      quantity: index
+      price: Math.floor(Math.random() * ((index + 25) / 3) * 50),
+      year: Math.floor(Math.random() * ((index + 25) / 3) + 2000),
+      category: {
+        _id: categories[(index % 6)]._id,
+        name: categories[(index % 6)].name,
+      },
+      quantity: Math.floor(Math.random() * ((index + 1) / 2) * 50),
     };
     partSeeds.push(outline);
   }
+
+  console.log(partSeeds)
 
   const parts = await Part.insertMany(partSeeds);
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useStoreContext } from "../utils/GlobalState";
 import { idbPromise } from "../utils/helpers";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CartItem = ({ item }) => {
 
@@ -36,31 +37,31 @@ const CartItem = ({ item }) => {
   }
 
   return (
-    <div className="flex-row">
+    <div className="d-flex justify-content-between align-items-baseline">
       <div>
         <img
-          src={`/images/${item.image}`}
-          alt=""
+          src={item.image}
+          alt={"Image of " + item.name}
         />
+        {item.name}, {item.description}
       </div>
+      <p style={{margin: '0px 1rem'}}> ${item.price} </p>
       <div>
-        <div>{item.name}, ${item.price}</div>
-        <div>
-          <span>Qty:</span>
-          <input
-            type="number"
-            placeholder="1"
-            value={item.purchaseQuantity}
-            onChange={onChange}
-          />
-          <span
-            role="img"
-            aria-label="trash"
-            onClick={() => removeFromCart(item)}
-          >
-            🗑️
-          </span>
-        </div>
+        <span>Qty: </span>
+        <input
+          type="number"
+          placeholder="1"
+          value={item.purchaseQuantity}
+          onChange={onChange}
+        />
+        <span
+          role="img"
+          aria-label="trash"
+          style={{ cursor: 'pointer' }}
+          onClick={() => removeFromCart(item)}
+        >
+          🗑️
+        </span>
       </div>
     </div>
   );
