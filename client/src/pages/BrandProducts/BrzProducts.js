@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import CategoryNav from '../../components/CategoryNav'
 import { useQuery } from '@apollo/client';
-import { QUERY_MODEL } from '../../utils/queries';
+
+import CategoryNav from '../../components/CategoryNav'
+import PartCard from '../../components/PartCard'
+
 import { useStoreContext } from '../../utils/GlobalState';
+import { QUERY_MODEL } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
-export default function Brzparts() {
+export default function BRZProducts() {
     const [state, dispatch] = useStoreContext();
 
     const { currentCategory } = state;
@@ -18,7 +21,6 @@ export default function Brzparts() {
     let partsData
 
     if (data) {
-        console.log(data.model.parts)
         partsData = data.model.parts
     }
 
@@ -26,9 +28,9 @@ export default function Brzparts() {
         if (data) {
             dispatch({
                 type: 'UPDATE_PARTS',
-                parts: partsData,
+                parts: data.model.parts,
             });
-            partsData.forEach((part) => {
+            data.model.parts.forEach((part) => {
                 idbPromise('parts', 'put', part);
             });
         } else if (!loading) {
@@ -41,49 +43,41 @@ export default function Brzparts() {
         }
     }, [data, loading, dispatch]);
 
-    function filterparts() {
+    function filterParts() {
         if (!currentCategory) {
-            return state.parts;
+            return partsData;
         }
 
-        return state.parts.filter(
+        return partsData.filter(
             (part) => part.category._id === currentCategory
         );
     }
 
-    const cardStyle = {
-        width: "18rem",
-        margin: '10px'
-    }
-
     return (
         <>
-
             <div className='topboxbrz'>
                 <h1 className='carmodelname'>BRZ</h1>
             </div>
-
-            <div className='productscontainer'>
-
+            <div className='partsContainer d-flex justify-content-around'>
                 <CategoryNav />
-
-                <div id='brzPartList' className='partscontainer'>
+                <div id='brzPartList' className='partscontainer col-10 d-flex justify-content-evenly'>
                     {partsData &&
-                        partsData.map(part => {
+                        filterParts().map(part => {
                             return (
-                                <div className="card" style={cardStyle}>
-                                    <img className="card-img-top" src={part.image} alt="Card image cap" />
-                                    <div className="card-body">
-                                        <h5 className="card-title">{part.name}</h5>
-                                        <p className="card-description">{part.description}</p>
-                                        <p className="card-price">{part.price}</p>
-                                        <a href="#" class="btn btn-primary">Add To Cart</a>
-                                    </div>
-                                </div>
+                                <PartCard
+                                    key={part._id}
+                                    _id={part._id}
+                                    model={'BRZ'}
+                                    image={part.image}
+                                    name={part.name}
+                                    price={part.price}
+                                    description={part.description}
+                                    quantity={part.quantity}
+                                    year={part.year}
+                                />
                             )
                         })}
                 </div>
-
             </div>
         </>
     )
