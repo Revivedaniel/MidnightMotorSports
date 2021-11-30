@@ -52,7 +52,6 @@ export default function Brzparts() {
     }
 
     const cardStyle = {
-        width: "18rem",
         margin: '10px'
     }
 

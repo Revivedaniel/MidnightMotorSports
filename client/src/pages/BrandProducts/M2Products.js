@@ -20,7 +20,6 @@ export default function M2Products() {
     }
 
     const cardStyle = {
-        width: "18rem",
         margin: '10px'
     }
 
@@ -39,7 +38,7 @@ export default function M2Products() {
                 {partsData &&
                     partsData.map(part => {
                         return (
-                            <div className="card col-1" style={cardStyle}>
+                            <div className="card" style={cardStyle}>
                                 <img className="card-img-top" src={part.image} alt="Card image cap" />
                                 <div class ="card-body">
                                 <h5 class ="card-title">{part.name}</h5>

@@ -192,18 +192,18 @@ li:hover {
 }
 
 .mitsuimgs {
-  margin-top: -20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   align-content: center;
+  margin: 4% 0;
 }
 
 .evo9img {
-  width: 750px;
-  height: 430px;
+  width: 602px;
+  height: 293px;
 }
 .evo9img:hover {
   transition: 300ms;
@@ -211,8 +211,8 @@ li:hover {
   filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
 .evoximg {
-  width: 720px;
-  height: 430px;
+  width: 623px;
+  height: 313px;
 }
 .evoximg:hover {
   transition: 300ms;
@@ -227,12 +227,12 @@ li:hover {
   justify-content: space-around;
   align-items: center;
   align-content: center;
+  margin: 4% 0;
 }
 
 .brzimg {
-  margin-top: 110px;
-  width: 550px;
-  height: 280px;
+  width: 428px;
+  height: 208px;
 }
 .brzimg:hover {
   transition: 300ms;
@@ -241,8 +241,8 @@ li:hover {
 }
 .stiimg {
   margin: 10px;
-  width: 610px;
-  height: 360px;
+  width: 428px;
+  height: 193px;
 }
 .stiimg:hover {
   transition: 300ms;
@@ -411,8 +411,22 @@ textarea {
 .productscontainer {
   display: flex;
   flex-direction: row;
-  
-  
+  justify-content: space-around;
+  margin: 0 2%;
+}
+
+#navButtons {
+  width: min-content;
+}
+#navButtons button {
+  width: 13.6vw;
+  margin: 2px;
+  font-size: 1.2vw;
+}
+
+.card {
+  width: 18rem;
+  border-radius: 40px;
 }
 
 .buttoncontainer {
@@ -431,15 +445,10 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-border: 2px solid white;
-height: 100%;
-border-radius: 20px;
-margin: 2%;
-}
-
-.card {
-  height: 500px;
-  border-radius: 40px;
+  border: 2px solid white;
+  height: 100%;
+  border-radius: 20px;
+  margin: 2%;
 }
 
 #dropdown-basic-button {
@@ -632,19 +641,106 @@ margin: 2%;
 /*Header breaking points*/
 /*1328, */
 
+@media screen and (max-width: 1058px) {
+  .brandimg {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+  }
+  .brandimg > * {
+    margin: 4% 0;
+  }
+}
+
 @media screen and (max-width: 922px) {
   .carousel {
     position: relative;
     margin: 0 auto;
     width: 89.3vw;
+  }
+  .aboutinfo {
+    width: 89.3vw;
+  }
 }
-.aboutinfo {
-  width: 89.3vw;
+
+@media screen and (max-width: 768px) {
 }
+
+@media screen and (max-width: 622px) {
+  
+  .subarulogo {
+    width: 90.6vw;
+    height: 54.4vw;
+  }
+  .mitlogo {
+    width: 40.2vw;
+    height: 48.24vw;
+  }
+  .bmwlogo {
+    width: 40.2vw;
+    height: 40.2vw;
+  }
+  .brzimg {
+    margin-top: 110px;
+    width: 81vw;
+    height: 39.9vw;
+  }
+  .stiimg {
+    margin: 10px;
+    width: 81.87vw;
+    height: 37vw;
+  }
+  .carmodelname {
+    font-size: 12vw;
+  }
+  .evo9img {
+    width: 96.8vw;
+    height: 47.1vw;
+  }
+  .evoximg {
+    width: 100.2vw;
+    height: 50.3vw;
+  }
+  .m2img {
+    margin-top: 20px;
+    width: 93.3vw;
+    height: 49.9vw;
+  }
+  .m4img {
+    margin: 10px;
+    width: 88.5vw;
+    height: 48.3vw;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .unorderedList {
     font-size: 19px;
+  }
+  .productscontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0 2%;
+  }
+  .partscontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid white;
+    height: 100%;
+    border-radius: 20px;
+    margin: 2%;
+    width: min-content;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card {
+    width: 60vw;
+    margin: 10px;
   }
 }

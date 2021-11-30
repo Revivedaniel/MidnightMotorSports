@@ -19,7 +19,6 @@ export default function M4Products() {
     }
 
     const cardStyle = {
-        width: "18rem",
         margin: '10px'
     }
 
