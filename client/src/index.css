@@ -537,6 +537,20 @@ textarea {
 /*Header breaking points*/
 /*1328, */
 
+@media screen and (max-width: 1058px) {
+  .brandimg {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+.brandimg > * {
+  margin: 4% 0;
+}
+}
+
 @media screen and (max-width: 922px) {
   .carousel {
     position: relative;
@@ -545,6 +559,21 @@ textarea {
 }
 .aboutinfo {
   width: 89.3vw;
+}
+}
+
+@media screen and (max-width: 622px) {
+  .subarulogo {
+    width: 90.6vw;
+    height: 54.4vw;
+}
+.mitlogo {
+  width: 40.2vw;
+  height: 48.24vw;
+}
+.bmwlogo {
+  width: 40.2vw;
+  height: 40.2vw;
 }
 }
 
