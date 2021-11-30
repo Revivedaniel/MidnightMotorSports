@@ -54,14 +54,14 @@ const typeDefs = gql`
 
   type Query {
     user: User
-    parts: [Part]
-    categories: [Category]
-    models: [Model]
-    makes: [Make]
-    make(_id: ID!): Make
-    model(_id: ID!): Model
-    category(_id: ID!): Category
     part(_id: ID!): Part
+    parts(category: ID, name: String): [Part]
+    category(_id: ID!): Category
+    categories: [Category]
+    model(name: String!): Model
+    models: [Model]
+    make(_id: ID!): Make
+    makes: [Make]
     order(_id: ID!): Order
     checkout(parts: [ID]!): Checkout
   }
@@ -71,6 +71,7 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
     addOrder(parts: [ID]!): Order
+    updatePart(_id: ID!, quantity: Int!): Part
   }
 `;
 

@@ -1,37 +1,50 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap'
+import CategoryNav from '../../components/CategoryNav'
+
+import { useQuery } from '@apollo/client';
+import { QUERY_CATEGORIES } from '../../utils/queries';
+import { QUERY_MODEL } from '../../utils/queries';
 
 export default function M4Products() {
+    let partsData
+
+    const { loading, data } = useQuery(QUERY_MODEL, {
+        variables: { name: 'm4' }
+    })
+
+    if (!loading) {
+        console.log(data.model.parts)
+        partsData = data.model.parts
+    }
+
+    const cardStyle = {
+        width: "18rem",
+        margin: '10px'
+    }
+
     return (
         <div className='productscontainer'>
             <div className='topboxm4'>
                 <h1 className='carmodelname'>M4</h1>
-
             </div>
-            <div className='buttoncontainer'>
+            <CategoryNav />
 
-                <DropdownButton as={ButtonGroup} key='induction' id="dropdown-basic-button" drop='end' title="Forced Induction">
-                    <Dropdown.Item href="#/action-1">Turbo Kits</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Intercoolers</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Blow Off Valves</Dropdown.Item>
-                </DropdownButton>
-                <DropdownButton as={ButtonGroup} key='suspension' id="dropdown-basic-button" drop='end' title="Suspension">
-                    <Dropdown.Item href="#/action-1">Coilovers</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Lowering Springs</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Shocks</Dropdown.Item>
-                </DropdownButton>
-                <DropdownButton as={ButtonGroup} key='exhaust' id="dropdown-basic-button" drop='end' title="Exhaust">
-                    <Dropdown.Item href="#/action-1">Mufflers</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Manifolds</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Heat Shields</Dropdown.Item>
-                </DropdownButton>
-                <DropdownButton as={ButtonGroup} key='brakes' id="dropdown-basic-button" drop='end' title="Brakes">
-                    <Dropdown.Item href="#/action-1">Calipers</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Brake Rotors</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Brake Pads</Dropdown.Item>
-                </DropdownButton>
-
+            <div id='m4PartList' className='d-flex'>
+                {partsData &&
+                    partsData.map(part => {
+                        return (
+                            <div className="card" style={cardStyle}>
+                                <img className="card-img-top" src={part.image} alt="Card image cap" />
+                                <div class ="card-body">
+                                <h5 class ="card-title">{part.name}</h5>
+                                <p class ="card-description">{part.description}</p>
+                                <p class ="card-price">{part.price}</p>
+                                <a href="#" class ="btn btn-primary">Add To Cart</a>
+                                </div>
+                            </div>
+                        )
+                    })}
             </div>
 
         </div>
