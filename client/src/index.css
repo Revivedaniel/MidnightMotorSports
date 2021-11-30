@@ -411,6 +411,21 @@ textarea {
 .productscontainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  margin: 0 2%;
+}
+
+#navButtons {
+  width: min-content;
+}
+#navButtons button {
+  width: 13.6vw;
+  margin: 2px;
+  font-size: 1.2vw;
+}
+
+.card {
+  width: 18rem;
 }
 
 .buttoncontainer {
@@ -577,7 +592,11 @@ textarea {
   }
 }
 
+@media screen and (max-width: 768px) {
+}
+
 @media screen and (max-width: 622px) {
+  
   .subarulogo {
     width: 90.6vw;
     height: 54.4vw;
@@ -615,16 +634,39 @@ textarea {
     margin-top: 20px;
     width: 93.3vw;
     height: 49.9vw;
-}
-.m4img {
-  margin: 10px;
-  width: 88.5vw;
-  height: 48.3vw;
-}
+  }
+  .m4img {
+    margin: 10px;
+    width: 88.5vw;
+    height: 48.3vw;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .unorderedList {
     font-size: 19px;
+  }
+  .productscontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0 2%;
+  }
+  .partscontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border: 2px solid white;
+    height: 100%;
+    border-radius: 20px;
+    margin: 2%;
+    width: min-content;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card {
+    width: 60vw;
+    margin: 10px;
   }
 }

@@ -3,7 +3,7 @@ import { Dropdown, DropdownButton, ButtonGroup } from 'react-bootstrap'
 
 export default function CategoryNav() {
     return (
-        <div className='buttoncontainer'>
+        <div className='buttoncontainer ' id='navButtons'>
             <DropdownButton as={ButtonGroup} key='induction' id="dropdown-basic-button" drop='end' title="Forced Induction">
                 <Dropdown.Item href="#/action-1">Turbo Kits</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Intercoolers</Dropdown.Item>
