@@ -52,7 +52,7 @@ function PartCard(item) {
 
     return (
         <div className='card' style={cardStyle}>
-            <img className='card-img-top' src={image} alt={'Image of ' + name} />
+            <img className='card-img-top' style={{height: '50%'}} src={image} alt={'Image of ' + name} />
             <div className='card-body'>
                 <h5 className='card-title'>{name}</h5>
                 <p className='card-description'>{description}</p>

@@ -8,8 +8,9 @@ import Auth from '../utils/auth';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useStoreContext } from '../utils/GlobalState';
 import '../../src/index.css';
+require('dotenv').config();
 
-const stripePromise = loadStripe(process.env.STRIPE_SECRET);
+const stripePromise = loadStripe("pk_test_51K094OH1JTdIxWpEQ3OOZmW04TlM7DvecrauLkesdmipJTKbBZNaYdmXOKRJHpF3sUmGsYNvmFwlF1R2muffI6EM00uwXWi18Q");
 
 const Cart = () => {
     const [state, dispatch] = useStoreContext();
@@ -18,6 +19,7 @@ const Cart = () => {
     useEffect(() => {
         if (data) {
             stripePromise.then((res) => {
+                console.log(data.checkout)
                 res.redirectToCheckout({ sessionId: data.checkout.session });
             });
         }
@@ -40,9 +42,11 @@ const Cart = () => {
 
     function calculateTotal() {
         let sum = 0;
+
         state.cart.forEach((item) => {
             sum += item.price * item.purchaseQuantity;
         });
+
         return sum.toFixed(2);
     }
 
