@@ -9,6 +9,8 @@ import { useStoreContext } from '../../utils/GlobalState';
 import { QUERY_MODEL } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
+import { useSpring, animated, config } from 'react-spring'
+
 export default function Evo789Products() {
     const [state, dispatch] = useStoreContext();
 
@@ -53,11 +55,15 @@ export default function Evo789Products() {
         );
     }
 
+    const bannerAnime = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 200, config: config.molasses })
+
     return (
         <>
-            <div className='topboxevo7'>
-                <h1 className='carmodelname'>EVO 7/8/9</h1>
-            </div>
+            <animated.div style={bannerAnime}>
+                <div className='topboxevo7'>
+                    <h1 className='carmodelname'>EVO 7/8/9</h1>
+                </div>
+            </animated.div>
             <div className='partsContainer d-flex justify-content-around'>
                 <CategoryNav />
                 <div id='evo789PartList' className='partscontainer col-10 d-flex justify-content-evenly'>
