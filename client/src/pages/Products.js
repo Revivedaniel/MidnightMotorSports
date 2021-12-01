@@ -10,14 +10,25 @@ import React from 'react'
 import Mitusbishi from '../images/transparentmitlogo.png'
 import Subaru from '../images/transparentsublogo.png'
 import Bmw from '../images/transparentbmwlogo.png'
+import { useSpring, animated, config } from 'react-spring'
 
 export default function Products() {
+    const Manime = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 100 })
+    const Sanime = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 600 })
+    const Banime = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1100 })
+
     return (
-        <div style={{margin: '0 2%'}}>
+        <div style={{ margin: '0 2%' }}>
             <div className='brandimg'>
-                <a href='/Mitsubishi'><img src={Mitusbishi} className='mitlogo' /></a>
-                <a href='/Subaru'><img src={Subaru} className='subarulogo' /></a>
-                <a href='/Bmw'><img src={Bmw} className='bmwlogo' /></a>
+                <animated.div style={Manime}>
+                    <a href='/Mitsubishi'><img src={Mitusbishi} className='mitlogo' /></a>
+                </animated.div>
+                <animated.div style={Sanime}>
+                    <a href='/Subaru'><img src={Subaru} className='subarulogo' /></a>
+                </animated.div>
+                <animated.div style={Banime}>
+                    <a href='/Bmw'><img src={Bmw} className='bmwlogo' /></a>
+                </animated.div>
             </div>
         </div>
     )
