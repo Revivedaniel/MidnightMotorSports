@@ -74,7 +74,7 @@ db.once("open", async () => {
     const outline = {
       name: `Part ${index}`,
       description: categories[(index % 6)].name,
-      image: `/Partsimages/part${index}.jpg`,
+      image: `/images/part${index}.jpg`,
       price: Math.floor(Math.random() * ((index + 25) / 3) * 50),
       year: Math.floor(Math.random() * ((index + 25) / 3) + 2000),
       category: {
