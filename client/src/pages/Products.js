@@ -18,7 +18,7 @@ export default function Products() {
     const Banime = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 1100 })
 
     return (
-        <div style={{ margin: '0 2%' }}>
+        <div style={{ marginBottom: '5%' }}>
             <div className='brandimg'>
                 <animated.div style={Manime}>
                     <a href='/Mitsubishi'><img src={Mitusbishi} className='mitlogo' /></a>
