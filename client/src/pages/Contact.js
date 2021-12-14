@@ -10,24 +10,24 @@ export default function Contact() {
         <div>
             <form className="formEntrie">
                 <div className='formcontainer'>
-                <label for="first_name">FUll Name</label>
-                <input type="text" id="fname" name="fullName" placeholder="Full Name"></input>
+                    <label for="first_name">Full Name</label>
+                    <input type="text" id="fname" name="fullName" placeholder="Full Name"></input>
 
-                <label for="last_name">Email</label>
-                <input type="text" id="lname" name="lastname" placeholder="Email"></input>
+                    <label for="last_name">Email</label>
+                    <input type="text" id="lname" name="lastname" placeholder="Email"></input>
 
-                <label for="answer">Choose Category</label>
-                <select id="question" name="question">
-                    <option value="looking for part">Looking For A Part</option>
-                    <option value="looking for suggestion">Looking For A Suggestion</option>
-                    <option value="looking for a custom part or job">Looking For A Custom Part Or Job</option>
-                </select>
+                    <label for="answer">Choose Category</label>
+                    <select id="question" name="question">
+                        <option value="looking for part">Looking For A Part</option>
+                        <option value="looking for suggestion">Looking For A Suggestion</option>
+                        <option value="looking for a custom part or job">Looking For A Custom Part Or Job</option>
+                    </select>
 
-                <label for="subject">Message</label>
-                <textarea id="subject" name="subject" placeholder="Send A Message" ></textarea>
+                    <label for="subject">Message</label>
+                    <textarea id="subject" name="subject" placeholder="Send A Message" ></textarea>
 
-                <button className='submitBtn' type="submit" value="Submit">Submit</button>
-</div>
+                    <button className='submitBtn' type="submit" value="Submit">Submit</button>
+                </div>
             </form>
 
 
