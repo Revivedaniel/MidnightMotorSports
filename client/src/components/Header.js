@@ -8,20 +8,20 @@ import Midnight from '../images/midnightlogo.png'
 export default function Header() {
     return (
         <header>
-            <a href="/"><img src={Midnight} alt='midnight logo' className='midnightLogo' /></a>
+            <Link to="/"><img src={Midnight} alt='midnight logo' className='midnightLogo' /></Link>
             <h1 className='headerPhrase'>The Real Shit Happens At Night</h1>
-            <a href="https://www.instagram.com/949midnight.motorsports/" target="_blank" rel="noreferrer">
+            <Link to="https://www.instagram.com/949midnight.motorsports/" target="_blank" rel="noreferrer">
                 <i className="fab fa-instagram fa-3x"></i>
-            </a>
-            <a href="https://www.facebook.com/949midnight.motorsports" target="_blank" rel="noreferrer">
+            </Link>
+            <Link to="https://www.facebook.com/949midnight.motorsports" target="_blank" rel="noreferrer">
                 <i className="fab fa-facebook fa-3x"></i>
-            </a>
+            </Link>
             {!Auth.loggedIn() ?
                 <Link to="/login" style={{ textDecoration: 'none', fontSize: '2rem' }}>
                     Login
                 </Link>
                 :
-                <Link href="/" onClick={() => Auth.logout()} style={{ textDecoration: 'none', fontSize: '2vw' }}>
+                <Link to="/" onClick={() => Auth.logout()} style={{ textDecoration: 'none', fontSize: '2rem' }}>
                     Logout
                 </Link>
             }
