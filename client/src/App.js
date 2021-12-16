@@ -81,7 +81,6 @@ function App() {
                     </Switch>
                     <Cart />
                 </StoreProvider>
-                <div className="footer-ghost"></div>
                 <Footer />
             </Router>
         </ApolloProvider>

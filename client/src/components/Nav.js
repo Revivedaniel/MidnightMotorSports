@@ -3,25 +3,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function navBar() {
-    return <nav style={{marginTop: '20px'}}>
-        <ul className='unorderedList'>
-            <li>
-                <Link to="/" style={{ textDecoration: 'none' }}>
-                    Home
-                </Link>
-            </li>
-            <li>
-                <Link to="/Products" style={{ textDecoration: 'none' }}>
-                    Products
-                </Link>
-            </li>
-            <li>
-                <Link to="/Contact" style={{ textDecoration: 'none' }}>
-                    Contact Us
-                </Link>
-            </li>
-        </ul>
+    return (
+    <nav>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+            Home
+        </Link>
+        <Link to="/Products" style={{ textDecoration: 'none' }}>
+            Products
+        </Link>
+        <Link to="/Contact" style={{ textDecoration: 'none' }}>
+            Contact Us
+        </Link>
     </nav>
-}
+)}
 
 

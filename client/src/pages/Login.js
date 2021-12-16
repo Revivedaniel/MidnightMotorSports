@@ -42,7 +42,7 @@ function Login(props) {
             });
             const token = mutationResponse.data.addUser.token;
             Auth.login(token);
-            
+
         } catch (err) {
             console.log(err)
         }
@@ -66,83 +66,67 @@ function Login(props) {
 
     return (
         <div className="enrollcontainer">
-            
-            
-            <form onSubmit={handleLoginSubmit} className='logincontainer'>
+            <form onSubmit={handleLoginSubmit} className='loginContainer'>
                 <h2>Login</h2>
-                    <label htmlFor="login-email">Email address:</label>
-                    <input
-                        placeholder="youremail@test.com"
-                        name="email"
-                        type="email"
-                        id="login-email"
-                        onChange={handleLoginChange}
-                    />
-                
-                    <label htmlFor="login-pwd">Password:</label>
-                    <input
-                        placeholder="******"
-                        name="password"
-                        type="password"
-                        id="login-pwd"
-                        onChange={handleLoginChange}
-                    />
-                
+                <label htmlFor="login-email">Email address:</label>
+                <input
+                    placeholder="youremail@test.com"
+                    name="email"
+                    type="email"
+                    id="login-email"
+                    onChange={handleLoginChange}
+                />
+                <label htmlFor="login-pwd">Password:</label>
+                <input
+                    placeholder="******"
+                    name="password"
+                    type="password"
+                    id="login-pwd"
+                    onChange={handleLoginChange}
+                />
                 {error ? (
-                   
-                        <p className="error-text">The provided credentials are incorrect</p>
-                   
+                    <p className="error-text">The provided credentials are incorrect</p>
                 ) : null}
-                
-                    <button className='submitBtn' type="submit">Submit</button>
-               
+                <button className='submitBtn' type="submit">Submit</button>
             </form>
-           
-            
-            <form onSubmit={handleSignupSubmit}className='signupcontainer' >
-                <h2>Signup</h2>
-                    <label htmlFor="firstName">First Name:</label>
-                    <input
-                        placeholder="First"
-                        name="firstName"
-                        type="firstName"
-                        id="firstName"
-                        onChange={handleSignupChange}
-                    />
-              
-                    <label htmlFor="lastName">Last Name:</label>
-                    <input
-                        placeholder="Last"
-                        name="lastName"
-                        type="lastName"
-                        id="lastName"
-                        onChange={handleSignupChange}
-                    />
-                
-                    <label htmlFor="signup-email">Email:</label>
-                    <input
-                        placeholder="youremail@test.com"
-                        name="email"
-                        type="email"
-                        id="signup-email"
-                        onChange={handleSignupChange}
-                    />
-               
-                    <label htmlFor="login-pwd">Password:</label>
-                    <input
-                        placeholder="******"
-                        name="password"
-                        type="password"
-                        id="signup-pwd"
-                        onChange={handleSignupChange}
-                    />
-               
-                    <button className='submitBtn' type="submit">Submit</button>
-                
-            </form>
-        
-        </div>
 
+            <form onSubmit={handleSignupSubmit} className='loginContainer' >
+                <h2>Signup</h2>
+                <label htmlFor="firstName">First Name:</label>
+                <input
+                    placeholder="First Name"
+                    name="firstName"
+                    type="firstName"
+                    id="firstName"
+                    onChange={handleSignupChange}
+                />
+                <label htmlFor="lastName">Last Name:</label>
+                <input
+                    placeholder="Last Name"
+                    name="lastName"
+                    type="lastName"
+                    id="lastName"
+                    onChange={handleSignupChange}
+                />
+                <label htmlFor="signup-email">Email:</label>
+                <input
+                    placeholder="youremail@email.com"
+                    name="email"
+                    type="email"
+                    id="signup-email"
+                    onChange={handleSignupChange}
+                />
+                <label htmlFor="login-pwd">Password:</label>
+                <input
+                    placeholder="*********"
+                    name="password"
+                    type="password"
+                    id="signup-pwd"
+                    onChange={handleSignupChange}
+                />
+                <button className='submitBtn' type="submit">Submit</button>
+            </form>
+        </div>
     );
 }
 
