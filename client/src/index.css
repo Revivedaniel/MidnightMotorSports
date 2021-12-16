@@ -182,7 +182,6 @@ nav a:hover {
 /*=================================================================*/
 
 .carmodelname {
-  color: white;
   text-shadow: 0px 0px 10px black;
   text-align: center;
   font-size: 80px;
@@ -195,7 +194,17 @@ nav a:hover {
   justify-content: space-around;
   align-items: center;
   align-content: center;
-  margin: 4% 0;
+  margin: 4rem 0;
+}
+
+.mitsuimgs a {
+  color: white;
+  text-decoration: none;
+}
+
+.mitsuimgs a:hover {
+  transition: 700ms;
+  color: #979aff;
 }
 
 .evo9img {
