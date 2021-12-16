@@ -20,90 +20,79 @@ body {
 /*=================================================================*/
 
 header {
+  background: black;
   display: flex;
-  padding: 1vw 3vw 0 3vw;
+  padding: 1vw 3vw;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
   color: white;
+  border-bottom: 1px solid hsla(0,0%,100%,.1);
 }
 
 .headerPhrase {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  font-size: 2.5vw;
+  font-size: 2vw;
   border: 5px solid white;
-  padding: 1.5%;
-  border-radius: 30px;
+  padding: 1rem;
+  border-radius: 15px;
 }
 
 .midnightLogo {
-  width: 14vw;
-  height: 14vw;
-}
-.instagramLogo {
-  width: 3vw;
-  height: 3vw;
-}
-.instagramLogo:hover {
-  transition: 300ms;
-  -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-  width: 4vw;
-  height: 4vw;
-}
-.facebookLogo {
-  width: 3vw;
-  height: 3vw;
-}
-.facebookLogo:hover {
-  transition: 300ms;
-  -webkit-filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-  width: 4vw;
-  height: 4vw;
+  width: 10vw;
+  height: 10vw;
 }
 
-.accountroute {
+header a {
   text-align: center;
-  padding: 10px;
+  text-decoration: none;
+  color: white;
 }
 
-.accountroute:hover {
-  box-shadow: inset 0px 0px 2px 2px white;
-  border-radius: 10px;
+header a:hover {
   transition: 400ms;
+  text-decoration: underline;
+  color: #979aff;
 }
 
 /*=================================================================*/
 /*                      NAV                              
 /*=================================================================*/
 
-.unorderedList {
+nav {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  font-size: 30px;
+  color: white;
+  padding: 1rem 0;
+  border-bottom: 1px solid hsla(0,0%,100%,.1);
+  justify-content: space-evenly;
+}
+
+.unorderedList {
   color: white;
   font-size: 30px;
   list-style-type: none;
-  padding: 0 8%;
 }
 
-ul {
-  text-decoration: none;
-}
 li {
   text-align: center;
-  width: 200px;
-  margin: 2px;
+  width: 14rem;
 }
 
-li:hover {
-  box-shadow: inset 0px 0px 2px 2px white;
-  border-radius: 10px;
+nav a {
+  color: white;
+  padding: 1px 1.5rem;
+}
+
+nav a:hover {
+  /* box-shadow: inset 0px 0px 2px 2px white;
+  border-radius: 10px; */
   transition: 400ms;
+  text-decoration: underline;
+  color: #979aff;
 }
 
 .carouselbox {
