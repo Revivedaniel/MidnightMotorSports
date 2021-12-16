@@ -13,7 +13,6 @@ function HomePage(){
     return (
     <div className='homepage'>
         <Jumbotron />
-      
     </div>
 )}
 
