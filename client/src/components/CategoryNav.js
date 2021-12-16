@@ -41,7 +41,7 @@ export default function CategoryNav() {
     };
 
     return (
-        <div className='buttoncontainer col-auto' id='navButtons'>
+        <div className='categoryNav' id='navButtons'>
             <DropdownButton as={ButtonGroup} key='induction' id="dropdown-basic-button" drop='end' title="Forced Induction">
                 <Dropdown.Item onClick={() => handleClick('61a6ed985d401e43a8781764')}>Turbo Kits</Dropdown.Item>
                 <Dropdown.Item onClick={() => handleClick('61a6ed985d401e43a8781765')}>Intercoolers</Dropdown.Item>
