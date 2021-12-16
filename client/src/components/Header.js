@@ -10,12 +10,12 @@ export default function Header() {
         <header>
             <Link to="/"><img src={Midnight} alt='midnight logo' className='midnightLogo' /></Link>
             <h1 className='headerPhrase'>The Real Shit Happens At Night</h1>
-            <Link to="https://www.instagram.com/949midnight.motorsports/" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/949midnight.motorsports/" target="_blank" rel="noreferrer">
                 <i className="fab fa-instagram fa-3x"></i>
-            </Link>
-            <Link to="https://www.facebook.com/949midnight.motorsports" target="_blank" rel="noreferrer">
+            </a>
+            <a href="https://www.facebook.com/949midnight.motorsports" target="_blank" rel="noreferrer">
                 <i className="fab fa-facebook fa-3x"></i>
-            </Link>
+            </a>
             {!Auth.loggedIn() ?
                 <Link to="/login" style={{ textDecoration: 'none', fontSize: '2rem' }}>
                     Login
