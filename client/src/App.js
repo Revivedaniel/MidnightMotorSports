@@ -53,13 +53,12 @@ function App() {
     return (
         <ApolloProvider client={client}>
             <Router>
+                <Header />
+                <Nav />
                 <StoreProvider>
-                    <Header />
-                    <Nav />
                     <Switch>
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/login" component={Login} />
-                        {/* <Route exact path="/checkout" component={Checkout} /> */}
                         <Route exact path="/models" component={Models} />
                         <Route exact path="/contact" component={Contact} />
 
