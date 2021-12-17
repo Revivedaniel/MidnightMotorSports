@@ -14,7 +14,7 @@ export default function Subaru() {
                 <div>
                     <Link to="/subaru/brz" style={{ textDecoration: 'none' }}>
                         <animated.div style={brzanime}>
-                            <img src={Brz} alt='brz image' className='brzimg' />
+                            <img src={Brz} alt='blue subaru brz' className='brzimg' />
                         </animated.div>
                         <h1 className='carmodelname'>BRZ</h1>
                     </Link>
@@ -22,7 +22,7 @@ export default function Subaru() {
                 <div>
                     <Link to="/subaru/sti" style={{ textDecoration: 'none' }}>
                         <animated.div style={stianime}>
-                            <img src={Sti} alt='evox image' className='stiimg' />
+                            <img src={Sti} alt='blue subaru sti' className='stiimg' />
                         </animated.div>
                         <h1 className='carmodelname'>STI</h1>
                     </Link>

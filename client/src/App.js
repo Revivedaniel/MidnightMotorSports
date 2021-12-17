@@ -11,7 +11,7 @@ import { StoreProvider } from './utils/GlobalState';
 import HomePage from './pages/HomePage';
 import Cart from './components/Cart';
 import Login from './pages/Login';
-import Products from './pages/Products';
+import Models from './pages/Models';
 import Contact from './pages/Contact';
 import NoRoute from './pages/NoRoute';
 
@@ -63,7 +63,7 @@ function App() {
                         <Route exact path="/" component={HomePage} />
                         <Route exact path="/login" component={Login} />
                         {/* <Route exact path="/checkout" component={Checkout} /> */}
-                        <Route exact path="/products" component={Products} />
+                        <Route exact path="/models" component={Models} />
                         <Route exact path="/contact" component={Contact} />
                         <Route exact path="/bmw" component={BMWProducts} />
                         <Route exact path="/bmw/m2" component={M2} />

@@ -11,13 +11,13 @@ export default function Mitsubishi() {
 
     return (
         <div className='mitsuimgs'>
-            <Link to="/Mitsubishi/evo789">
+            <Link to="/mitsubishi/evo789">
                 <animated.div style={evo7anime}>
                     <img src={Evo9} className='evoimg' alt='grey mitsubishi evo7/8/9' />
                 </animated.div>
                 <h1 className='carmodelname'>EVO7/8/9</h1>
             </Link>
-            <Link to="Mitsubishi/evox">
+            <Link to="mitsubishi/evox">
                 <animated.div style={Xanime}>
                     <img src={Evox} className='evoimg' alt='red mitsubishi evox' />
                 </animated.div>

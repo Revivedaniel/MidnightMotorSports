@@ -58,7 +58,7 @@ export default function Evo789Products() {
     const bannerAnime = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 200, config: config.molasses })
 
     return (
-        <div className='evo789Products'>
+        <div className='productsContainer'>
             <animated.div style={bannerAnime}>
                 <div className='topboxevo7'>
                     <h1 className='carmodelname'>EVO 7/8/9</h1>
