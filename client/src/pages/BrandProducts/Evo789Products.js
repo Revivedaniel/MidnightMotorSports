@@ -64,7 +64,7 @@ export default function Evo789Products() {
                     <h1 className='carmodelname'>EVO 7/8/9</h1>
                 </div>
             </animated.div>
-            <div className='d-flex justify-content-around'>
+            <div className='d-flex'>
                 <CategoryNav />
                 <div className='partscontainer d-flex'>
                     {partsData &&
