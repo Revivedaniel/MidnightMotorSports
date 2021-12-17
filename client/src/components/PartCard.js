@@ -22,7 +22,7 @@ function PartCard(item) {
 
     const addToCart = () => {
         const itemInCart = cart.find((cartItem) => cartItem._id === _id);
-        if(item.quantity > 0) {
+        if (item.quantity > 0) {
             if (itemInCart) {
                 dispatch({
                     type: 'UPDATE_CART_QUANTITY',
@@ -40,9 +40,9 @@ function PartCard(item) {
                 });
                 idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
             }
-         } else {
+        } else {
             alert("Sorry, that item is out of stock!");
-         }
+        }
     };
 
     function logInAlert(event) {
@@ -51,8 +51,8 @@ function PartCard(item) {
     }
 
     return (
-        <div className='card' style={cardStyle}>
-            <img className='card-img-top' style={{height: '50%'}} src={image} alt={'Image of ' + name} />
+        <div className='card partCard'>
+            <img className='card-img-top' style={{ height: '50%' }} src={image} alt={'Image of ' + name} />
             <div className='card-body'>
                 <h5 className='card-title'>{name}</h5>
                 <p className='card-description'>{description}</p>
@@ -66,9 +66,3 @@ function PartCard(item) {
 }
 
 export default PartCard;
-
-const cardStyle = {
-    width: '18rem',
-    margin: '10px',
-    minHeight: 'fit-content'
-}
