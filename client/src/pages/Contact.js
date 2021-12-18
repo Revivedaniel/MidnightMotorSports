@@ -3,14 +3,17 @@
 // nav - Home, Products, Contact Us
 // body - Contact form to input email address, message, etc.
 // footer - Business Info (address, phone number), GoogleMaps?, Copyright, socials   
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 
 export default function Contact() {
+    const [contacted, setContacted] = useState(false);
+
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
+        setContacted(true);
 
         emailjs.sendForm('service_e64f7yn', 'template_7uur8il', form.current, 'user_6NTSPvwgNeDGUGk3fdqAE')
             .then((result) => {
@@ -18,6 +21,8 @@ export default function Contact() {
             }, (error) => {
                 console.log(error.text);
             });
+        
+        form.current.reset()
     };
 
     return (
@@ -40,6 +45,7 @@ export default function Contact() {
                 <textarea name="message" placeholder="Message"></textarea>
 
                 <button className='submitBtn' type="submit" value="Submit">Submit</button>
+                {contacted && <div className="alert alert-success mt-4">Your message has been sent. You will receive a reply within 5 business days. Thank you!</div>}
             </form>
         </div>
     )
