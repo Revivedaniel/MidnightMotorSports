@@ -60,7 +60,6 @@ db.once("open", async () => {
   const categories = await Category.insertMany(categorySeeds);
 
   console.log("Categories seeded");
-  console.log(categories);
 
   // Part seeds
   await Part.deleteMany();
@@ -85,8 +84,6 @@ db.once("open", async () => {
     };
     partSeeds.push(outline);
   }
-
-  console.log(partSeeds)
 
   const parts = await Part.insertMany(partSeeds);
 

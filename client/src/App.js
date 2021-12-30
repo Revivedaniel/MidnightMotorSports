@@ -29,6 +29,7 @@ import SubaruProducts from './pages/BrandProducts/SubaruProducts'
 import Nav from './components/Nav';
 import Header from './components/Header';
 import Footer from './components/Footer'
+import Success from './pages/Success';
 
 const httpLink = createHttpLink({
     uri: '/graphql',
@@ -62,6 +63,7 @@ function App() {
                         <Route exact path="/about" component={About} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/contact" component={Contact} />
+                        <Route exact path="/success" component={Success} />
 
                         <Route exact path="/bmw" component={BMWModels} />
                         <Route exact path="/bmw/:model" component={BMWProducts} />
