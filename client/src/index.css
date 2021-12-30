@@ -226,12 +226,10 @@ nav a:hover {
 
 .subieimgs {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  align-content: center;
-  margin: 4% 0;
+  margin: 4rem 0;
 }
 
 .brzimg {
@@ -254,13 +252,11 @@ nav a:hover {
   filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
 .bmwimgs {
-  margin-top: 70px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  align-content: center;
+  margin: 4rem 0;
 }
 
 .m2img {
@@ -289,26 +285,31 @@ nav a:hover {
 /*=================================================================*/
 
 footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 10rem;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
   width: 100%;
   color: white;
   border-top: 1px solid hsla(0,0%,100%,.1);
 }
 
 footer a {
+  margin: auto;
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
 }
 
+footer div {
+  margin: auto;
+}
+
+footer div a {
+  margin: 0 1rem;
+}
+
 footer a:hover {
   text-decoration: underline;
-  color: white;
   font-size: 1.2rem;
   color: #979aff;
 }
@@ -613,12 +614,10 @@ textarea {
     height: 50.3vw;
   }
   .m2img {
-    margin-top: 20px;
     width: 93.3vw;
     height: 49.9vw;
   }
   .m4img {
-    margin: 10px;
     width: 88.5vw;
     height: 48.3vw;
   }
