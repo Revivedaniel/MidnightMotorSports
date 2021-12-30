@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -8,10 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { StoreProvider } from './utils/GlobalState';
 
 // pages
-import HomePage from './pages/HomePage';
+import About from './pages/About';
 import Cart from './components/Cart';
 import Login from './pages/Login';
-import Models from './pages/Models';
+import Brands from './pages/Brands';
 import Contact from './pages/Contact';
 import NoRoute from './pages/NoRoute';
 
@@ -57,9 +57,10 @@ function App() {
                 <Nav />
                 <StoreProvider>
                     <Switch>
-                        <Route exact path="/" component={HomePage} />
+                        <Route exact path="/" render={() => <Redirect to="/brands" />} />
+                        <Route exact path="/brands" component={Brands} />
+                        <Route exact path="/about" component={About} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path="/models" component={Models} />
                         <Route exact path="/contact" component={Contact} />
 
                         <Route exact path="/bmw" component={BMWModels} />

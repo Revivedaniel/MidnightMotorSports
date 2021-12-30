@@ -9,7 +9,7 @@ import React from 'react';
 import Jumbotron from '../components/Jumbotron';
 
 
-function HomePage(){
+function About(){
     return (
     <div className='homepage'>
         <Jumbotron />
@@ -17,4 +17,4 @@ function HomePage(){
 )}
 
 
-export default HomePage;
+export default About;
