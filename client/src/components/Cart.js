@@ -8,7 +8,6 @@ import Auth from '../utils/auth';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useStoreContext } from '../utils/GlobalState';
 import '../../src/index.css';
-require('dotenv').config();
 
 const stripePromise = loadStripe("pk_test_51K094OH1JTdIxWpEQ3OOZmW04TlM7DvecrauLkesdmipJTKbBZNaYdmXOKRJHpF3sUmGsYNvmFwlF1R2muffI6EM00uwXWi18Q");
 
