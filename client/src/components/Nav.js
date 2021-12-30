@@ -1,20 +1,21 @@
 // nav - Home, Products, Contact Us
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
-export default function navBar() {
+function NavBar() {
     return (
-    <nav>
-        <Link to="/" style={{ textDecoration: 'none' }}>
-            Home
-        </Link>
-        <Link to="/models" style={{ textDecoration: 'none' }}>
-            Products
-        </Link>
-        <Link to="/contact" style={{ textDecoration: 'none' }}>
-            Contact Us
-        </Link>
-    </nav>
-)}
+        <nav>
+            <NavLink activeClassName='active' to="/about" onlyActiveOnIndex>
+                About Us
+            </NavLink>
+            <NavLink activeClassName='active' to="/brands" onlyActiveOnIndex>
+                Shop Products
+            </NavLink>
+            <NavLink activeClassName='active' to="/contact" onlyActiveOnIndex>
+                Contact Us
+            </NavLink>
+        </nav>
+    )
+}
 
-
+export default withRouter(NavBar)

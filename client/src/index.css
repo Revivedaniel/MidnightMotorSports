@@ -20,36 +20,36 @@ body {
 /*=================================================================*/
 
 header {
+  display: grid;
   background: black;
-  display: flex;
-  padding: 1vw 3vw;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
   width: 100%;
   color: white;
   border-bottom: 1px solid hsla(0,0%,100%,.1);
-}
-
-.headerPhrase {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  font-size: 2vw;
-  border: 5px solid white;
-  padding: 1rem;
-  border-radius: 8px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .midnightLogo {
   width: 10vw;
-  height: 10vw;
+  height: inherit;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin: 1rem 0;
+}
+
+header div {
+  margin: auto;
 }
 
 header a {
+  font-size: 2rem;
   text-align: center;
   text-decoration: none;
   color: white;
+  margin: 0 1rem;
+}
+
+.fa-facebook {
+  margin-right: 4vw;
 }
 
 header a:hover {
@@ -63,18 +63,12 @@ header a:hover {
 /*=================================================================*/
 
 nav {
-  display: flex;
-  font-size: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size: 1.5rem;
   color: white;
   padding: 1rem 0;
   border-bottom: 1px solid hsla(0,0%,100%,.1);
-  justify-content: space-evenly;
-}
-
-.unorderedList {
-  color: white;
-  font-size: 30px;
-  list-style-type: none;
 }
 
 li {
@@ -83,14 +77,21 @@ li {
 }
 
 nav a {
+  text-align: center;
+  text-decoration: none;
   color: white;
-  padding: 1px 1.5rem;
+  margin: auto;
 }
 
 nav a:hover {
   transition: 400ms;
   text-decoration: underline;
   color: #979aff;
+}
+
+.active {
+  color: #979aff;
+  text-decoration: underline;
 }
 
 /*=================================================================*/
@@ -138,6 +139,19 @@ nav a:hover {
 /*=================================================================*/
 
 .brandContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.brandContainer p {
+  font-size: 3rem;
+  margin: 3rem 0 0 0;
+}
+
+.iconContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -212,12 +226,10 @@ nav a:hover {
 
 .subieimgs {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  align-content: center;
-  margin: 4% 0;
+  margin: 4rem 0;
 }
 
 .brzimg {
@@ -240,13 +252,11 @@ nav a:hover {
   filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
 }
 .bmwimgs {
-  margin-top: 70px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  align-content: center;
+  margin: 4rem 0;
 }
 
 .m2img {
@@ -275,26 +285,31 @@ nav a:hover {
 /*=================================================================*/
 
 footer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   height: 10rem;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
   width: 100%;
   color: white;
   border-top: 1px solid hsla(0,0%,100%,.1);
 }
 
 footer a {
+  margin: auto;
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
 }
 
+footer div {
+  margin: auto;
+}
+
+footer div a {
+  margin: 0 1rem;
+}
+
 footer a:hover {
   text-decoration: underline;
-  color: white;
   font-size: 1.2rem;
   color: #979aff;
 }
@@ -599,12 +614,10 @@ textarea {
     height: 50.3vw;
   }
   .m2img {
-    margin-top: 20px;
     width: 93.3vw;
     height: 49.9vw;
   }
   .m4img {
-    margin: 10px;
     width: 88.5vw;
     height: 48.3vw;
   }

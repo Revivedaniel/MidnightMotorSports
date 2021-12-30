@@ -13,22 +13,25 @@ import Bmw from '../images/transparentbmwlogo.png'
 import { useSpring, animated } from 'react-spring'
 import { Link } from 'react-router-dom'
 
-export default function Models() {
+export default function Brands() {
     const Manime = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 100 })
     const Sanime = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 400 })
     const Banime = useSpring({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 700 })
 
     return (
         <div className='brandContainer'>
-            <animated.div style={Manime}>
-                <Link to='/mitsubishi'><img src={Mitusbishi} className='mitlogo' alt='mitsubishi logo' /></Link>
-            </animated.div>
-            <animated.div style={Sanime}>
-                <Link to='/subaru'><img src={Subaru} className='subarulogo' alt="Subaru logo" /></Link>
-            </animated.div>
-            <animated.div style={Banime}>
-                <Link to='/bmw'><img src={Bmw} className='bmwlogo' alt='bmw logo' /></Link>
-            </animated.div>
+            <p>Our Brands</p>
+            <div className='iconContainer'>
+                <animated.div style={Manime}>
+                    <Link to='/mitsubishi'><img src={Mitusbishi} className='mitlogo' alt='mitsubishi logo' /></Link>
+                </animated.div>
+                <animated.div style={Sanime}>
+                    <Link to='/subaru'><img src={Subaru} className='subarulogo' alt="Subaru logo" /></Link>
+                </animated.div>
+                <animated.div style={Banime}>
+                    <Link to='/bmw'><img src={Bmw} className='bmwlogo' alt='bmw logo' /></Link>
+                </animated.div>
+            </div>
         </div>
     )
 }
